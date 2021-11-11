@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_memcpy.c                                      :+:      :+:    :+:   */
+/*   main_memmove.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 10:28:29 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/11 17:17:44 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/10 12:46:25 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/11 17:10:26 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 int	main(void)
 {
-	//char		dst[50] = "";
-	char		*dst;
+	char		dst[50] = "Destination is here!";
 	const char	*src;
-	size_t		n;
-	
-	dst = NULL;
-	n = 5;
-	src = NULL;
+	size_t		len;
 
-	memcpy((void *)0, (void *)0, n);
-	ft_putstr("Before memcpyi\n");
-	//ft_putstr((char *)src);
+	src = "Source is here!";
+	len = 7;
+	memmove(&dst[5], src, len);
+	ft_putstr(dst);
 	ft_putchar('\n');
-	ft_memcpy((void *)0, (void *)0, n);
-	//ft_memcpy((void *)&dst[5], (void *)&dst[3], n);
-	ft_putstr("After memcpy\n");
-	//ft_putstr((char *)src);
-	ft_putchar('\n');	
+	ft_memmove(&dst[5], src, len);
+	ft_putstr(dst);
+	ft_putchar('\n');
 }

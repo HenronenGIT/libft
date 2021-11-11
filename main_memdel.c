@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_memcpy.c                                      :+:      :+:    :+:   */
+/*   main_memdel.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 10:28:29 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/11 17:17:44 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/11 10:33:53 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/11 14:09:23 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 int	main(void)
 {
-	//char		dst[50] = "";
-	char		*dst;
-	const char	*src;
-	size_t		n;
-	
-	dst = NULL;
-	n = 5;
-	src = NULL;
+	void	*ret;
+	size_t	i;
 
-	memcpy((void *)0, (void *)0, n);
-	ft_putstr("Before memcpyi\n");
-	//ft_putstr((char *)src);
-	ft_putchar('\n');
-	ft_memcpy((void *)0, (void *)0, n);
-	//ft_memcpy((void *)&dst[5], (void *)&dst[3], n);
-	ft_putstr("After memcpy\n");
-	//ft_putstr((char *)src);
-	ft_putchar('\n');	
+	i = 0;
+	ret = ft_memalloc(5);
+	while (i != 5)
+	{
+		printf("%d", ((char *)ret)[i]);
+		i++;
+	}
+	printf("\n");
+	ft_memdel(&ret);
+	printf("%s\n", ret);
 }

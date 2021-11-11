@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_memcpy.c                                      :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 10:28:29 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/11 17:17:44 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/10 14:52:08 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/10 15:19:26 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-int	main(void)
-{
-	//char		dst[50] = "";
-	char		*dst;
-	const char	*src;
-	size_t		n;
-	
-	dst = NULL;
-	n = 5;
-	src = NULL;
 
-	memcpy((void *)0, (void *)0, n);
-	ft_putstr("Before memcpyi\n");
-	//ft_putstr((char *)src);
-	ft_putchar('\n');
-	ft_memcpy((void *)0, (void *)0, n);
-	//ft_memcpy((void *)&dst[5], (void *)&dst[3], n);
-	ft_putstr("After memcpy\n");
-	//ft_putstr((char *)src);
-	ft_putchar('\n');	
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (((unsigned char *)s1)[i] == ((unsigned char *)s2)[i] && i != n)
+		i++;
+	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 }
