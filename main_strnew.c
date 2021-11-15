@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_strchr.c                                      :+:      :+:    :+:   */
+/*   main_strnew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 12:38:12 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/12 14:57:09 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/12 16:15:40 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/12 17:09:35 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 int	main(void)
 {
+	size_t	size;
+	char	*ret;
+	size = 5;
+	ret = ft_strnew(size);
+	ret[5] = 'H';
+	ret[6] = 'E';
+	//ret[10] = 'L';
+	printf("%c\n", ret[5]);
+	printf("%c\n", ret[6]);
+	//printf("%c\n", ret[10]);
 
-	const char	s[50] = "Hellob world";
-	const char s2[50] = "Hello\0wor\0ld";	
-
-	printf("\n%s\n",(strchr(s, 'b')));
-	printf("%s\n\n",ft_strchr(s, 'b'));
-
-	printf("%s\n",(strchr(s, 'c')));
-	printf("%s\n\n",(ft_strchr(s, 'c')));
-
-	printf("|%s|\n",(strchr(s2, '\0')));
-	printf("|%s|\n\n",(ft_strchr(s2, '\0')));
 
 }

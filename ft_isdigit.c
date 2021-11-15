@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:28:42 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/11 16:36:39 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/12 14:32:47 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isdigit(int c)
 {
-	if (c >= 0 && c <= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	else
 		return (0);

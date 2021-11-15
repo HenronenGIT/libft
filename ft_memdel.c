@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 10:33:41 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/11 14:09:21 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/15 09:43:22 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@ void	ft_memdel(void **ap)
 	size_t	i;
 
 	i = 0;
-	while (i != 5)
-	{
-		printf("%d", ((char *)*ap)[i]);
-		i++;
-	}
 	free(*ap);
-	ap = NULL;
+	*ap = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:28:33 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/11 16:36:40 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/12 14:32:49 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,16 @@ int	main(void)
 	int	c;
 
 	c = '0';
-	ft_putnbr(isdigit(c));
-	ft_putchar('\n');
-	ft_putnbr(ft_isdigit(c));
-	ft_putchar('\n');
-	c = '1';
-	ft_putnbr(isdigit(c));
-	ft_putchar('\n');
-	ft_putnbr(ft_isdigit(c));
-	ft_putchar('\n');
+	printf("%d\n",(isdigit(c)));
+	printf("%d\n\n",(ft_isdigit(c)));
+	c = -1;
+	printf("%d\n",(isdigit(c)));
+	printf("%d\n\n",(ft_isdigit(c)));
 	c = '9';
-	ft_putnbr(isdigit(c));
-	ft_putchar('\n');
-	ft_putnbr(ft_isdigit(c));
-	ft_putchar('\n');
+	printf("%d\n",(isdigit(c)));
+	printf("%d\n\n",(ft_isdigit(c)));
 	c = 'a';
-	ft_putnbr(isdigit(c));
-	ft_putchar('\n');
-	ft_putnbr(ft_isdigit(c));
-	ft_putchar('\n');
+	printf("%d\n",(isdigit(c)));
+	printf("%d\n\n",(ft_isdigit(c)));
+
 }

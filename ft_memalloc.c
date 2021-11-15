@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 16:08:09 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/11 13:41:55 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/12 16:40:55 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ void	*ft_memalloc(size_t size)
 	return (mem_area);
 }
 
-void	*ft_memset(void *b, int c, size_t len)
-{
-	size_t	i;
-
-	i = 0;
-	while (i != len)
-	{
-		((unsigned char *)b)[i] = (unsigned char)c;
-		i++;
-	}
-	return (b);
-}
+//void	*ft_memset(void *b, int c, size_t len)
+//{
+//	size_t	i;
+//
+//	i = 0;
+//	while (i != len)
+//	{
+//		((unsigned char *)b)[i] = (unsigned char)c;
+//		i++;
+//	}
+//	return (b);
+//}

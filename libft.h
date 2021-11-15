@@ -1,14 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
-	/*                                                        :::      ::::::::   */
-	/*   libft.h                                            :+:      :+:    :+:   */
-	/*                                                    +:+ +:+         +:+     */
-	/*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
-	/*                                                +#+#+#+#+#+   +#+           */
-	/*   Created: 2021/11/04 09:44:17 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/11 14:43:31 by hmaronen         ###   ########.fr       */
-	/*                                                                            */
-	/* ************************************************************************** */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/04 09:44:17 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/15 18:12:49 by hmaronen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -35,11 +35,11 @@ char	*ft_strdup(const char *str);
 char	*ft_strcpy(char *dest, const char *src);
 char	*ft_strncpy(char *dest, const char *src, size_t len);
 char	*ft_strcat(char *dest, const char *src);
-char	*ft_strncat(char *dest, const char *src, size_t n);
+char	*ft_strncat(char *s1, const char *s2, size_t n);
 size_t	ft_strlcat(char *dest, char *src, size_t dstsize);//not ready
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
-char	*ft_strstr(const char *s1, const char *s2);
+char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strnstr(const char *s1, const char *s2, size_t len);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -52,4 +52,9 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
+char	*ft_strnew(size_t size);
+void	ft_strdel(char **as);
+void	ft_strclr(char *s);
+void	ft_striter(char *s, void (*f)(char *));
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 14:51:59 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/10 15:19:27 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/12 14:18:06 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,50 +23,34 @@ int	main(void)
 	const char	*s7;
 	const char	*s8;
 	size_t		n;
-	int			ret_nb;
 
-	s1 = "Hello world!";
-	s2 = "Hello world!";
+	//s1 = "\xff\xaa\xde\x12";
+	//s2 = "\xff\xaa\xde\x12MACOSAAAAA";
+	s1 = "Hello world";
+	s2 = "Hello";
 	s3 = "";
 	s4 = "";
 	s5 = "Hello aorld!";
 	s6 = "Hello world!";
 	s7 = "Hello world!";
 	s8 = "";
-	n = 11;
+	n = 12;
 
 
-	ret_nb = memcmp(s1, s2, n);
-	ft_putnbr(ret_nb);
-	ft_putchar('\n');
-	ret_nb = ft_memcmp(s1, s2, n);
-	ft_putnbr(ret_nb);
-	ft_putchar('\n');
-	ft_putchar('\n');
 
-	ret_nb = memcmp(s3, s4, n);
-	ft_putnbr(ret_nb);
-	ft_putchar('\n');
-	ret_nb = ft_memcmp(s3, s4, n);
-	ft_putnbr(ret_nb);
-	ft_putchar('\n');
-	ft_putchar('\n');
+	printf("%d\n",memcmp(s1, s2, n));
+	printf("%d\n\n",ft_memcmp(s1, s2, n));
 
-	ret_nb = memcmp(s5, s6, n);
-	ft_putnbr(ret_nb);
-	ft_putchar('\n');
-	ret_nb = ft_memcmp(s5, s6, n);
-	ft_putnbr(ret_nb);
-	ft_putchar('\n');
-	ft_putchar('\n');
+	printf("%d\n",memcmp(s3, s4, n));
+	printf("%d\n\n",ft_memcmp(s3, s4, n));
 
-	ret_nb = memcmp(s7, s8, n);
-	ft_putnbr(ret_nb);
-	ft_putchar('\n');
-	ret_nb = ft_memcmp(s7, s8, n);
-	ft_putnbr(ret_nb);
-	ft_putchar('\n');
-	ft_putchar('\n');
+	printf("%d\n",memcmp(s5, s6, n));
+	printf("%d\n\n",ft_memcmp(s5, s6, n));
 
+	printf("%d\n",memcmp(s7, s8, n));
+	printf("%d\n\n",ft_memcmp(s7, s8, n));
+
+	printf("%d\n",memcmp(s1, s2, 4));
+	printf("%d\n\n",ft_memcmp(s1, s2, 4));
 	return (0);
 }
