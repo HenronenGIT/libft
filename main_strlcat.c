@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:12:38 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/17 18:15:12 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/18 16:57:45 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	main(void)
 {
 	const char	*src;
 	const char *src2;
-	char		dst[11] = "a";
-	char		dst2[11] = "a";
+	char		dst[] = "a";
+	char		dst2[] = "a";
 	char		dst3[50] = "Hello";
 	char		dst4[50] = "Hello";
 	char		dst5[15] = "a";

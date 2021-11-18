@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 16:11:58 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/18 17:29:21 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/18 11:57:13 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/18 13:36:45 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char	*ft_strjoin(char const *s1, char const *s2)
 {
+	char	*new_str;
+	int		len;
 	int		i;
-	char	*str;
 
 	i = 0;
-	if (s == NULL)
+	if (s1 == 0 || s2 == 0)
 		return (NULL);
-	str = ft_strnew(ft_strlen((char *)s));
-	if (str != 0)
-	{
-		while (s[i] != 0)
-		{
-			str[i] = f(s[i]);
-			i++;
-		}
-	}
-	return (str);
+	len = ft_strlen((char *)s1) + ft_strlen((char *)s2);
+	new_str = (char *)malloc(sizeof(new_str) * (len) + 1);
+	if (new_str == NULL)
+		return (NULL);
+	ft_strcpy(new_str, s1);
+	ft_strcat(new_str, s2);
+	while (new_str[i] != 0)
+		i++;
+	new_str[i] = '\0';
+	return (new_str);
 }

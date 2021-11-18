@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:44:17 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/18 10:49:52 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/18 16:52:10 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <xlocale.h>
 
 void	ft_lcase(char *s);
-int		ft_putnbr(int nb);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
 int		ft_isspace(int c);
@@ -63,4 +62,9 @@ char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strequ(char const *s1, char const *s2);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s);
+void	ft_putendl(char const *s);
+void	ft_putnbr(int n);
 #endif

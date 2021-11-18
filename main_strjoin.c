@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_strmap.c                                      :+:      :+:    :+:   */
+/*   main_strjoin.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 16:10:23 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/18 17:29:22 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/18 11:57:11 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/18 13:36:52 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
-
-char	ft_lcase_map(char c);
+#include "libft.h"
 
 int	main(void)
 {
-	char (*f)(char);
-	char	*s;
-	char	*s2;
-	char	*s3;
+	const char *str1;
+	const char *str2;
 	
-	s = "HELLO woRLD!";
-	s2 = NULL;
-	s3 = "hello world!";
-	f = &ft_lcase_map;
+	str1 = NULL;
+	str2 = NULL;
+	printf("\n|%s|\n", ft_strjoin(str1, str2));
+	printf("|%s|\n", ft_strjoin("Hello", "world"));
+	printf("|%s|\n", ft_strjoin("", ""));
+	printf("|%s|\n", ft_strjoin("Hello", ""));
+	printf("|%s|\n", ft_strjoin("", "world"));
 
-	printf("%s\n",ft_strmap(s, f));
-	printf("%s\n",ft_strmap(s3, f));
-
-	ft_strmap(s2, f);
-}
-
-char	ft_lcase_map(char c)
-{
-	if (c >= 'A' && c <= 'Z')
-		c = c + 32;
-	return (c);
 }

@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_strmap.c                                      :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 16:10:23 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/18 17:29:22 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/18 10:53:37 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/18 11:56:33 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "libft.h"
 
-char	ft_lcase_map(char c);
-
-int	main(void)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char (*f)(char);
-	char	*s;
-	char	*s2;
-	char	*s3;
-	
-	s = "HELLO woRLD!";
-	s2 = NULL;
-	s3 = "hello world!";
-	f = &ft_lcase_map;
+	char			*new_str;
+	unsigned int	size;
+	unsigned int	i;
 
-	printf("%s\n",ft_strmap(s, f));
-	printf("%s\n",ft_strmap(s3, f));
-
-	ft_strmap(s2, f);
-}
-
-char	ft_lcase_map(char c)
-{
-	if (c >= 'A' && c <= 'Z')
-		c = c + 32;
-	return (c);
+	i = 0;
+	size = (unsigned int)len;
+	if (s == NULL)
+		return (NULL);
+	new_str = (char *)malloc(sizeof(new_str) * len);
+	if (new_str == NULL)
+		return (NULL);
+	while (i != size)
+	{
+		new_str[i] = s[start];
+		start++;
+		i++;
+	}
+	return (new_str);
 }
