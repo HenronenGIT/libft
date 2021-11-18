@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:12:38 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/08 14:55:17 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/17 18:15:12 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,29 @@
 
 int	main(void)
 {
-	char	dest[10] = "Hello ";
-	char	src[10] = "world!";
-	int		dstsize;
-	int		r;
-	
-	dstsize = ft_strlen(dest);
-	printf("Dest size:%d\n", dstsize);//temp
-	r = strlcat(dest, src, dstsize);
-	printf("strlcat return:%d\n", r);//temp
-	r = ft_strlcat(dest2, src, dstsize);
-	printf("FT ret:%d\n", r);
+	const char	*src;
+	const char *src2;
+	char		dst[11] = "a";
+	char		dst2[11] = "a";
+	char		dst3[50] = "Hello";
+	char		dst4[50] = "Hello";
+	char		dst5[15] = "a";
+	char		dst6[15] = "a";
+	src = "lorem";
+	src2 = "lorem ipsum dolor sit amet";
+
+	printf("%lu\n",strlcat(dst, src,  11));
+	printf("|%s|\n", dst);
+	printf("%lu\n",ft_strlcat(dst2, src, 11));
+	printf("|%s|\n\n", dst);
+
+	printf("%lu\n",strlcat(dst3, src, 15));
+	printf("|%s|\n", dst);
+	printf("%lu\n",ft_strlcat(dst4, src, 15));
+	printf("|%s|\n\n", dst);
+
+	printf("%lu\n",strlcat(dst5, src2, 15));
+	printf("|%s|\n", dst);
+	printf("%lu\n",ft_strlcat(dst6, src2, 15));
+	printf("|%s|\n\n", dst);
 }

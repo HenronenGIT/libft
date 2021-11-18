@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:44:17 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/15 18:12:49 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/18 10:49:52 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <ctype.h>
 # include <xlocale.h>
 
+void	ft_lcase(char *s);
 int		ft_putnbr(int nb);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
@@ -36,7 +37,7 @@ char	*ft_strcpy(char *dest, const char *src);
 char	*ft_strncpy(char *dest, const char *src, size_t len);
 char	*ft_strcat(char *dest, const char *src);
 char	*ft_strncat(char *s1, const char *s2, size_t n);
-size_t	ft_strlcat(char *dest, char *src, size_t dstsize);//not ready
+size_t	ft_strlcat(char *dest, const char *src, size_t dstsize);//not ready
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strstr(const char *haystack, const char *needle);
@@ -48,6 +49,7 @@ int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
+int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 void	*ft_memalloc(size_t size);
@@ -56,5 +58,9 @@ char	*ft_strnew(size_t size);
 void	ft_strdel(char **as);
 void	ft_strclr(char *s);
 void	ft_striter(char *s, void (*f)(char *));
-
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char	*ft_strmap(char const *s, char (*f)(char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+int		ft_strequ(char const *s1, char const *s2);
+int		ft_strnequ(char const *s1, char const *s2, size_t n);
 #endif

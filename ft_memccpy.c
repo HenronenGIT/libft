@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 11:05:51 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/11 17:36:12 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/17 12:00:15 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	{
 		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 		if (((unsigned char *)src)[i] == (unsigned char)c)
-			return (dst);
+			return (&dst[i + 1]);
 		i++;
 	}
 	return (NULL);

@@ -6,24 +6,39 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 09:54:52 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/15 11:10:07 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/16 10:06:55 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+void	ft_lcase(char *s);
 
 int	main(void)
 {
 	const char	*str;
 	char	s[50];
 	void	(*f)(char *);
+	void	(*f2);
+	char	*str2 = NULL;
 
 	//Making string what needs to be iterated
-	str = "Hello world!";
+	str = "HELLO WorLd!";
 	ft_strcpy(s, str);
-	printf("%s\n", s);
 
-	f = &ft_putstr;
+	f = &ft_lcase;
+	//Normal test.
+	printf("s, before ft_striter()\n%s\n\n", s);
 	ft_striter(s,f);
+	printf("s, after ft_striter()\n%s\n\n", s);
+	//Poiners are null test.
+	f2 = NULL;
+	ft_striter(str2,f2);
+}
 
+void	ft_lcase(char *s)
+{
+	if (*s >= 'A' && *s <= 'Z')
+	{
+		*s = *s + 32;
+	}
 }

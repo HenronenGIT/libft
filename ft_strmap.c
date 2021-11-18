@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_strrchr.c                                     :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 13:37:15 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/17 14:28:25 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/16 16:11:58 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/17 10:45:36 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(void)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	const char	s1[50] = "This is ab worbld!";
+	int		i;
+	char	*str;
 
-	printf("\n%s\n",strrchr(s1, 'b'));
-	printf("%s\n\n",ft_strrchr(s1, 'b'));
-
-	printf("|%s|\n",strrchr("hel\0lo", '\0'));
-	printf("|%s|\n\n",ft_strrchr("hel\0lo", '\0'));
-
-	printf("|%s|\n",strrchr("", '\0'));
-	printf("|%s|\n\n",ft_strrchr("", '\0'));
-
-	printf("|%s|\n",strrchr("hello", 'h'));
-	printf("|%s|\n\n",ft_strrchr("hello", 'h'));
+	i = 0;
+	if (s == NULL)
+		return (NULL);
+	str = (char *)malloc(sizeof(str) * ft_strlen((char *)s));
+	if (str != 0)
+	{
+		while (s[i] != 0)
+		{
+			str[i] = f(s[i]);
+			i++;
+		}
+	}
+	return (str);
 }

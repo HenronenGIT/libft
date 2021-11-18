@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_strrchr.c                                     :+:      :+:    :+:   */
+/*   main_strmap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 13:37:15 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/17 14:28:25 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/16 16:10:23 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/17 10:45:38 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include	"libft.h"
+
+char	ft_lcase_map(char c);
 
 int	main(void)
 {
-	const char	s1[50] = "This is ab worbld!";
+	char (*f)(char);
+	char	*s;
+	char	*s2;
+	char	*s3;
+	
+	s = "HELLO woRLD!";
+	s2 = NULL;
+	s3 = "hello world!";
+	f = &ft_lcase_map;
 
-	printf("\n%s\n",strrchr(s1, 'b'));
-	printf("%s\n\n",ft_strrchr(s1, 'b'));
+	printf("%s\n",ft_strmap(s, f));
+	printf("%s\n",ft_strmap(s3, f));
 
-	printf("|%s|\n",strrchr("hel\0lo", '\0'));
-	printf("|%s|\n\n",ft_strrchr("hel\0lo", '\0'));
+	ft_strmap(s2, f);
+}
 
-	printf("|%s|\n",strrchr("", '\0'));
-	printf("|%s|\n\n",ft_strrchr("", '\0'));
-
-	printf("|%s|\n",strrchr("hello", 'h'));
-	printf("|%s|\n\n",ft_strrchr("hello", 'h'));
+char	ft_lcase_map(char c)
+{
+	if (c >= 'A' && c <= 'Z')
+		c = c + 32;
+	return (c);
 }

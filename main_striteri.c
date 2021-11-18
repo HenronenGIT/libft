@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_strrchr.c                                     :+:      :+:    :+:   */
+/*   main_striteri.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 13:37:15 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/17 14:28:25 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/16 10:07:29 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/16 12:19:35 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+void	ft_lcasei(unsigned int i , char *s);
+
 int	main(void)
 {
-	const char	s1[50] = "This is ab worbld!";
+	char		s[] = "HELLO WORLD";
+	void			(*f)(unsigned int, char *);
+	char			*s2;
 
-	printf("\n%s\n",strrchr(s1, 'b'));
-	printf("%s\n\n",ft_strrchr(s1, 'b'));
 
-	printf("|%s|\n",strrchr("hel\0lo", '\0'));
-	printf("|%s|\n\n",ft_strrchr("hel\0lo", '\0'));
+	s2 = NULL;
+	f = &ft_lcasei;
 
-	printf("|%s|\n",strrchr("", '\0'));
-	printf("|%s|\n\n",ft_strrchr("", '\0'));
+	printf("%s\n", s);
+	ft_striteri(s, f);
+	printf("%s\n", s);
 
-	printf("|%s|\n",strrchr("hello", 'h'));
-	printf("|%s|\n\n",ft_strrchr("hello", 'h'));
+	ft_striteri(s2,f);
+}
+
+void	ft_lcasei(unsigned int i , char *s)
+{
+	i = 0;
+	if (*s >= 'A' && *s <= 'Z')
+	{
+		*s = *s + 32;
+	}
 }

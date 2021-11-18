@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_strrchr.c                                     :+:      :+:    :+:   */
+/*   main_strmapi.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 13:37:15 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/17 14:28:25 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/17 10:46:05 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/17 11:15:15 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+char	ft_lcase_mapi(unsigned int n, char c);
+
 int	main(void)
 {
-	const char	s1[50] = "This is ab worbld!";
+	char (*f)(unsigned int, char);
+	char	*s;
+	char	*s2;
 
-	printf("\n%s\n",strrchr(s1, 'b'));
-	printf("%s\n\n",ft_strrchr(s1, 'b'));
+	s = "HELLO woRLD!";
+	s2 = NULL;
+	f = &ft_lcase_mapi;
 
-	printf("|%s|\n",strrchr("hel\0lo", '\0'));
-	printf("|%s|\n\n",ft_strrchr("hel\0lo", '\0'));
+	printf("%s\n",ft_strmapi(s, f));
+	ft_strmapi(s2, f);
+}
 
-	printf("|%s|\n",strrchr("", '\0'));
-	printf("|%s|\n\n",ft_strrchr("", '\0'));
-
-	printf("|%s|\n",strrchr("hello", 'h'));
-	printf("|%s|\n\n",ft_strrchr("hello", 'h'));
+char	ft_lcase_mapi(unsigned int n, char c)
+{
+	n = 0;
+	if (c >= 'A' && c <= 'Z')
+		c = c + 32;
+	return (c);
 }

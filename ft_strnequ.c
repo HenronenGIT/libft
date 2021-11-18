@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_strrchr.c                                     :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 13:37:15 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/17 14:28:25 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/18 10:24:33 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/18 10:48:31 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(void)
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	const char	s1[50] = "This is ab worbld!";
+	size_t	i;
 
-	printf("\n%s\n",strrchr(s1, 'b'));
-	printf("%s\n\n",ft_strrchr(s1, 'b'));
-
-	printf("|%s|\n",strrchr("hel\0lo", '\0'));
-	printf("|%s|\n\n",ft_strrchr("hel\0lo", '\0'));
-
-	printf("|%s|\n",strrchr("", '\0'));
-	printf("|%s|\n\n",ft_strrchr("", '\0'));
-
-	printf("|%s|\n",strrchr("hello", 'h'));
-	printf("|%s|\n\n",ft_strrchr("hello", 'h'));
+	i = 0;
+	if (s1 == 0 || s2 == 0 || n == 0)
+		return (1);
+	while (s1[i] == s2[i] && s1[i] != 0 && s2[i] != 0 && i < (n - 1))
+		i++;
+	if (s1[i] == s2[i])
+		return (1);
+	else
+		return (0);
 }

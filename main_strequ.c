@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_strrchr.c                                     :+:      :+:    :+:   */
+/*   main_strequ.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 13:37:15 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/17 14:28:25 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/17 11:24:24 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/18 10:45:05 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 int	main(void)
 {
-	const char	s1[50] = "This is ab worbld!";
 
-	printf("\n%s\n",strrchr(s1, 'b'));
-	printf("%s\n\n",ft_strrchr(s1, 'b'));
+	const char	*str1;
+	const char	*str2;
+	str1 = NULL;
+	str2 = NULL;
 
-	printf("|%s|\n",strrchr("hel\0lo", '\0'));
-	printf("|%s|\n\n",ft_strrchr("hel\0lo", '\0'));
-
-	printf("|%s|\n",strrchr("", '\0'));
-	printf("|%s|\n\n",ft_strrchr("", '\0'));
-
-	printf("|%s|\n",strrchr("hello", 'h'));
-	printf("|%s|\n\n",ft_strrchr("hello", 'h'));
+	printf("%d\n\n", ft_strequ(str1, str2));
+	printf("%d\n\n", ft_strequ("abcd", "abcd"));
+	printf("%d\n\n", ft_strequ("abCd", "abcd"));
+	printf("%d\n\n", ft_strequ("", ""));
+	printf("%d\n\n", ft_strequ("c", "C"));
+	printf("%d\n\n", ft_strequ("abCd", "abcd"));
 }
