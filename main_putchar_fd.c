@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   main_putchar_fd.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 09:50:54 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/19 17:40:23 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/19 10:20:58 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/19 10:53:38 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+int	main(void)
 {
-	int			i;
-	int			j;
-	const char	*sub_string;
+	int	fd;
 
-	i = 0;
-	if (needle[i] == 0)
-		return ((char *)haystack);
-	while (haystack[i] != 0)
+	fd = open("test", O_WRONLY);
+	if (fd == -1)
 	{
-		j = 0;
-		if (haystack[i] == needle[j])
-		{
-			sub_string = &haystack[i];
-			while (haystack[i + j] == needle[j])
-			{
-				j++;
-				if (needle[j] == 0)
-					return ((char *)sub_string);
-			}
-		}
-		i++;
+		printf("open() error!\n");
+		return (0);
 	}
-	return (NULL);
+	ft_putchar_fd('H', fd);
 }

@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   main_itoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 09:50:54 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/19 17:40:23 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/19 13:04:14 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/19 16:19:23 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+int	main(void)
 {
-	int			i;
-	int			j;
-	const char	*sub_string;
-
-	i = 0;
-	if (needle[i] == 0)
-		return ((char *)haystack);
-	while (haystack[i] != 0)
-	{
-		j = 0;
-		if (haystack[i] == needle[j])
-		{
-			sub_string = &haystack[i];
-			while (haystack[i + j] == needle[j])
-			{
-				j++;
-				if (needle[j] == 0)
-					return ((char *)sub_string);
-			}
-		}
-		i++;
-	}
-	return (NULL);
+	printf("%s\n", ft_itoa(4));
+	printf("%s\n", ft_itoa(10));
+	printf("%s\n", ft_itoa(123456789));
+	printf("%s\n", ft_itoa(0));
+	printf("%s\n", ft_itoa(-4444));
+	printf("%s\n", ft_itoa(-9));
+	printf("%s\n", ft_itoa(-2147483648));
+	printf("%s\n", ft_itoa(2147483647));
 }

@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:46:32 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/12 13:26:22 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/19 16:33:01 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	i = 0;
 	if (((void *)dst) == 0 && ((void *)src) == 0)
 		return (NULL);
-	temp = (unsigned char *)malloc(sizeof(unsigned char *) * len);
+	temp = ft_memalloc(len);
 	if (temp == NULL)
 		return (NULL);
 	else

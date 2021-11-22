@@ -1,40 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 09:50:54 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/19 17:40:23 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/19 10:21:01 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/19 10:53:37 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+void	ft_putchar_fd(char c, int fd)
 {
-	int			i;
-	int			j;
-	const char	*sub_string;
-
-	i = 0;
-	if (needle[i] == 0)
-		return ((char *)haystack);
-	while (haystack[i] != 0)
-	{
-		j = 0;
-		if (haystack[i] == needle[j])
-		{
-			sub_string = &haystack[i];
-			while (haystack[i + j] == needle[j])
-			{
-				j++;
-				if (needle[j] == 0)
-					return ((char *)sub_string);
-			}
-		}
-		i++;
-	}
-	return (NULL);
+	write(fd, &c, 1);
 }

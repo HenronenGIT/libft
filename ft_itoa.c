@@ -1,40 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 09:50:54 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/19 17:40:23 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/19 13:04:06 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/19 16:19:22 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+char	*ft_itoa(int n)
 {
+	char		*str;
 	int			i;
-	int			j;
-	const char	*sub_string;
+	int			temp;
 
+	temp = n;
 	i = 0;
-	if (needle[i] == 0)
-		return ((char *)haystack);
-	while (haystack[i] != 0)
+	while (temp != 0)
 	{
-		j = 0;
-		if (haystack[i] == needle[j])
-		{
-			sub_string = &haystack[i];
-			while (haystack[i + j] == needle[j])
-			{
-				j++;
-				if (needle[j] == 0)
-					return ((char *)sub_string);
-			}
-		}
+		temp = temp / 10;
 		i++;
 	}
-	return (NULL);
+	if (n < 0)
+	{
+		str = ft_strnew(i + 1);
+		str[0] = '-';
+		n = n * -1;
+	}
+	else
+	{
+		str = ft_strnew(i);
+		i = i - 1;
+	}	
+	if (n == 0)
+		str[0] = '0';
+	while (i >= 0 && str[i] != '-')
+	{
+		str[i] = inttoasc(n);
+		n = n / 10;
+		i--;
+	}
+	return (str);
 }
