@@ -20,8 +20,7 @@ int	ft_atoi(const char *str)
 
 	nb = 0;
 	i = 0;
-
-	if (str[i] >= 65 && str[i] <= 127)
+	if (str[i] >= 'A' && str[i] <= 127)
 		return (0);
 	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
 			|| str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
