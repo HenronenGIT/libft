@@ -25,7 +25,6 @@
 void	ft_lcase(char *s);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
-int		ft_isspace(int c);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
@@ -78,4 +77,5 @@ void	ft_putnbr_fd(int n, int fd);
 char	*ft_itoa(int n);
 int		negative_converter(int n, char *str);
 char	**ft_strsplit(char const *s, char c);
+int		ft_isspace(const char c);
 #endif

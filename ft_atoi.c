@@ -28,8 +28,8 @@ static int	convertor(char *str)
 	}
 	return (nb);
 }
-//make whitespace to library
-static int	atoi_whitespace(const char c)
+
+int	ft_isspace(const char c)
 {
 	if (c == '\t' || c == '\n' || c == '\v' || c == '\f'
 		|| c == '\r' || c == ' ')
@@ -40,18 +40,21 @@ static int	atoi_whitespace(const char c)
 int	ft_atoi(const char *str)
 {
 	int		i;
-	int		tem;
+	int		temp;
 
 	temp = 1;
 	i = 0;
 	if (ft_isalpha(str[i]))
 		return (0);
-	while (atoi_whitespace(str[i]))
+	while (ft_isspace(str[i]))
 		i++;
 	if (str[i + 1] == '+' || str[i + 1] == '-')
 		return (0);
-	if (str[i++] == '-')
+	if (str[i] == '-')
+	{
 		temp = -1;
+		i++;
+	}
 	else if (str[i] == '+')
 		i++;
 	return (convertor((char *)&str[i]) * temp);
