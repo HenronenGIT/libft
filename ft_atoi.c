@@ -6,43 +6,60 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 09:24:31 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/11 11:01:35 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/22 16:32:23 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int	atoi_whitespace(const char c);
+int	convertor(char *str);
+
 int	ft_atoi(const char *str)
 {
 	int		i;
-	int		nb;
 	int		temp;
 
-	nb = 0;
+	temp = 1;
 	i = 0;
-	if (str[i] >= 'A' && str[i] <= 127)
+	if (ft_isalpha(str[i]))
 		return (0);
-	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
-			|| str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
+	while (atoi_whitespace(str[i]))
 		i++;
 	if (str[i + 1] == '+' || str[i + 1] == '-')
-	   return (0);
+		return (0);
 	if (str[i] == '-')
 	{
 		temp = -1;
 		i++;
 	}
 	else if (str[i] == '+')
-			i++;
+		i++;
+	return (convertor((char *)&str[i]) * temp);
+}
+
+int	convertor(char *str)
+{
+	int	i;
+	int	nb;
+
+	nb = 0;
+	i = 0;
 	while (str[i] != 0)
 	{
-		if (str[i] < '0' || str[i] > '9')
+		if (!ft_isdigit(str[i]))
 			return (nb);
 		nb = (nb * 10) + str[i] - 48;
 		i++;
 	}
-	if (temp == -1)
-		return (nb * -1);
+	return (nb);
+}
+
+int	atoi_whitespace(const char c)
+{
+	if (c == '\t' || c == '\n' || c == '\v' || c == '\f'
+		|| c == '\r' || c == ' ')
+		return (1);
 	else
-		return (nb);
+		return (0);
 }

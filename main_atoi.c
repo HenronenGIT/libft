@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 09:24:20 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/17 15:52:07 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/22 16:32:25 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	main(void)
 	test("aaa");
 	test("+++++42");
 	test("       ++++42");
+	printf("%d\n", ft_atoi("\n\n\n  -46\b9 \n5d6"));
+	printf("%d\n\n", atoi("\n\n\n  -46\b9 \n5d6"));
 	return (0);
 }
 
