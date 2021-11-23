@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 09:54:44 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/16 10:06:54 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/23 12:35:33 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	ft_striter(char *s, void (*f)(char *))
 	size_t	i;
 
 	i = 0;
-	if (s != NULL || f != NULL)
+	if (!s || !f)
+		return ;
 	{
 		while (s[i] != 0)
 		{

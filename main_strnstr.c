@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:54:20 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/08 11:13:49 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/23 13:49:12 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ int	main(void)
 	const char	*s6;
 	const char	*s7;
 	const char	*s8;
-	size_t		len;
 
-	len = 3;
 	s1 = "There is needle in a haystack!";
 	s2 = "needle";
 	s3 = "";
@@ -33,32 +31,26 @@ int	main(void)
 	s6 = "";
 	s7 = "There is needle in a neede stack - needle";
 	s8 = "needle";
-	if (s1[0] != '\0')
-	{
-		ft_putstr(strnstr(s1, s2, len));
-		ft_putchar('\n');
-		ft_putstr(ft_strnstr(s1, s2, len));
-		ft_putchar('\n');
-	}
-		if (s3[0] != '\0')
-	{
-		ft_putstr(strnstr(s3, s4, len));
-		ft_putchar('\n');
-		ft_putstr(ft_strnstr(s3, s4, len));
-		ft_putchar('\n');
-	}
-	if (s5[0] != '\0')
-	{
-		ft_putstr(strnstr(s5, s6, len));
-		ft_putchar('\n');
-		ft_putstr(ft_strnstr(s5, s6, len));
-		ft_putchar('\n');
-	}
-	if (s7[0] != '\0')
-	{
-		ft_putstr(strnstr(s7, s8, len));
-		ft_putchar('\n');
-		ft_putstr(ft_strnstr(s7, s8, len));
-		ft_putchar('\n');
-	}
+
+	printf("\n%s\n", strnstr("There is needle in a haystack", "needle", 20));
+	printf("%s\n\n", ft_strnstr("There is needle in a haystack", "needle", 20));
+	
+	printf("%s\n", strnstr(s3, s4, 3));
+	printf("%s\n\n", ft_strnstr(s3, s4, 3));
+	
+	printf("%s\n", strnstr(s5, s6, 3));
+	printf("%s\n\n", ft_strnstr(s5, s6, 3));
+	
+	printf("%s\n", strnstr(s7, s8, 3));
+	printf("%s\n\n", ft_strnstr(s7, s8, 3));
+
+	printf("%s\n", strnstr("MZIRIBMZIRIBMZE123", "MZIRIBMZE", 9));
+	printf("%s\n\n", ft_strnstr("MZIRIBMZIRIBMZE123", "MZIRIBMZE", 9));
+
+	printf("|%s|\n", strnstr("", "", 0));
+	printf("|%s|\n\n", ft_strnstr("", "", 0));
+
+	printf("|%s|\n", strnstr("AAAA", "AAAA", 4));
+	printf("|%s|\n\n", ft_strnstr("AAAA", "AAAA", 4));
+
 }

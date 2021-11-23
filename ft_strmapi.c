@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 10:45:57 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/17 11:15:13 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/23 12:45:58 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*ft_strmapi(char const *s, char(*f)(unsigned int, char))
 	unsigned int	i;
 
 	i = 0;
-	if (s == NULL)
+	if (!s)
 		return (NULL);
-	new_str = (char *)malloc(sizeof(new_str) * ft_strlen((char *)s));
+	new_str = ft_strnew(ft_strlen((char *)s));
 	if (new_str != 0)
 	{
 		while (s[i] != 0)
