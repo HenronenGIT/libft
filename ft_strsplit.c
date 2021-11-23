@@ -6,14 +6,14 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 17:18:05 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/22 10:35:46 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/23 10:48:22 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 size_t	ft_word_count(const char *s, char c);
-int		ft_char_count(const char *s, char c);
+size_t	ft_char_count(const char *s, char c);
 
 char	**ft_strsplit(char const *s, char c)
 {
@@ -21,42 +21,46 @@ char	**ft_strsplit(char const *s, char c)
 	char	*new_str;
 	size_t	i;
 	size_t	j;
-	//can also use in malloc to save 1 variable
-	size_t	word_count;
+	size_t	k;
 
-	array = 0;
 	i = 0;
 	j = 0;
-
+	k = 0;
 	//allocating 2D_Array
-					// 2d array is full of pointers, allocate space for all pointers
-	array = ft_strnew(ft_char_count(s, c) + ft_word_count(s, c));
-	//
-	//loop for making each string
-	//while (i != ft_word_count(s, c))
-	//{
-	//	new_string[j] = ft_strnew();
-	//	j++;
-	//}
+	//	allocating space for pointers to strings.
+	array =	(char **)malloc(sizeof(char *) * ft_word_count(s, c) + 1);
 
 
-
-	printf("ft_word_count:%zu\n", ft_word_count(s, c));
-	printf("ft_char_count:%d\n\n", ft_char_count(s, c));
-	return (array);
-}
-
-int	ft_char_count(const char *s, char c)
-{
-	size_t	i;
-	int		char_count;
-
-	char_count = 0;
-	i = 0;
+	//loop for "filling pointer slots"
 	while (s[i] != 0)
 	{
 		if (s[i] != c)
-			char_count++;
+		{
+			array[j] = (char *)malloc(sizeof(char) * ft_char_count(&s[i], c) + 1);
+			array[j][k] = //copy string 
+			j++;
+
+
+		}
+		i++;
+	}
+
+
+	printf("ft_word_count:%zu\n", ft_word_count(s, c));
+	return (array);
+}
+
+size_t	ft_char_count(const char *s, char c)
+{
+	size_t	i;
+	size_t	char_count;
+
+	printf("%s\n", s);
+
+	i = 0;
+	while (s[i] != c)
+	{
+		char_count++;
 		i++;
 	}
 	return (char_count);
