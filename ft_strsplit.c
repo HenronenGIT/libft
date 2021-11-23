@@ -29,6 +29,7 @@ char	**ft_strsplit(char const *s, char c)
 	j = 0;
 
 	//allocating 2D_Array
+					// 2d array is full of pointers, allocate space for all pointers
 	array = ft_strnew(ft_char_count(s, c) + ft_word_count(s, c));
 	//
 	//loop for making each string
