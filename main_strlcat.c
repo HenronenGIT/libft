@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:12:38 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/22 16:43:34 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/23 14:59:31 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	main(void)
 	src = "lorem";
 	src2 = "lorem ipsum dolor sit amet";
 
-	printf("%lu\n",strlcat(dst, src,  11));
+	printf("%lu\n",strlcat(dst, src,  10));
 	printf("|%s|\n", dst);
-	printf("%lu\n",ft_strlcat(dst2, src, 11));
+	printf("%lu\n",ft_strlcat(dst2, src, 10));
 	printf("|%s|\n\n", dst);
 
 	printf("%lu\n",strlcat(dst3, src, 15));
@@ -39,4 +39,12 @@ int	main(void)
 	printf("|%s|\n", dst);
 	printf("%lu\n",ft_strlcat(dst6, src2, 15));
 	printf("|%s|\n\n", dst);
+
+	char dst7[] = "the cake is lie !\n I'm hidden lol\r\b";
+	char dst8[] = "there is no starts in the sky";
+	printf("%lu\n",strlcat(dst8,  dst7, 30));
+	printf("|%s|\n", dst8);
+	char dst9[] = "there is no starts in the sky";
+	printf("%lu\n",ft_strlcat(dst9, dst7, 30));
+	printf("|%s|\n\n", dst9);
 }
