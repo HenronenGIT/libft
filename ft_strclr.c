@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 09:44:32 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/15 09:52:39 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/23 12:31:52 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_strclr(char *s)
 {
 	size_t	i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i] != 0)
 	{

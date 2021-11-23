@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 17:09:46 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/15 09:44:01 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/23 12:27:34 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_strdel(char **as)
 {
+	if (as == NULL)
+		return ;
 	free(*as);
 	*as = NULL;
 }

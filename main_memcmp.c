@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 14:51:59 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/17 12:25:02 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/23 12:16:36 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,8 @@ int	main(void)
 
 	printf("%d\n",memcmp("zbcdefgh", "abcdefghj", 0));
 	printf("%d\n\n",ft_memcmp("zbcdefgh", "abcdefgj", 0));
+
+	printf("%d\n",memcmp("Hive\0\0\0", "Hive\0abc", 10));
+	printf("%d\n\n",ft_memcmp("Hive\0\0\0", "Hive\0abc", 10));
 	return (0);
 }
