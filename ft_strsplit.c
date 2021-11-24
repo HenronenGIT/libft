@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 17:18:05 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/24 14:31:41 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/24 17:07:55 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,12 @@ static size_t	ft_word_count(const char *s, char c)
 static size_t	ft_char_count(const char *s, char c)
 {
 	size_t	i;
-	size_t	char_count;
 
-	char_count = 0;
 	i = 0;
-	while (s[i] != c)
-	{
-		char_count++;
+	//printf("%s\n", s);
+	while (s[i] != c && s[i] != '\0')
 		i++;
-	}
-	return (char_count);
+	return (i);
 }
 
 char	**ft_strsplit(char const *s, char c)
@@ -67,14 +63,14 @@ char	**ft_strsplit(char const *s, char c)
 	{
 		if (s[i] != c)
 		{
-			arr[j] = (char *)malloc(sizeof(char) * ft_char_count(&s[i], c) + 1);
-			while (s[i] != c && s[i] != 0)
+			arr[j] = ft_strnew(ft_char_count(&s[i], c));
+			//strncpy
+			while (s[i] != c && s[i] != '\0')
 			{
 				arr[j][k] = s[i];
 				k++;
 				i++;
 			}
-			arr[j][k] = '\0';
 			j++;
 			k = 0;
 		}

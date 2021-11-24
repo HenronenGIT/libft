@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 17:18:12 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/24 14:31:53 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/24 17:07:56 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,24 @@ static size_t	ft_word_count(const char *s, char c)
 	return (word_count);
 }
 
+void	ft_print_array(char **arr, const char *s, char c)
+{
+	size_t	i;
+
+	i = 0;
+	while (i != ft_word_count(s, c))
+	{
+		printf("%s\n",arr[i]);
+		i++;
+	}
+}
+
 int	main(void)
 {
 	char	**arr;
-	char	**arr2;
+	//char	**arr2;
 	char	**arr3;
-	char	**arr4;
+	//char	**arr4;
 	size_t		i;
 
 	i = 0;
@@ -53,28 +65,28 @@ int	main(void)
 	i = 0;
 	printf("\n");
 
-	arr2 = ft_strsplit("   Hello fellow students ", ' ');
-	while (i != ft_word_count("   Hello fellow students ", ' '))
-	{
-		printf("%s\n", arr2[i]);
-		i++;
-	}
-	i = -1;
-	printf("\n");
+	//arr2 = ft_strsplit("   Good day Hivers ", ' ');
+	//while (i != ft_word_count("   Good day hivers ", ' '))
+	//{
+	//	printf("%s\n", arr2[i]);
+	//	i++;
+	//}
+	//i = 0;
+	//printf("\n");
+	char const *s1 = "      Hello";
+	char c;
+	c = ' ';
+	arr3 = ft_strsplit(s1, c);
+	ft_print_array(arr, s1, c);
 
-	arr3 = ft_strsplit("Hello", '*');
-	while (i++ != 0)
-		printf("%s\n", arr3[i]);
-	i = 0;
-	printf("\n");
-
-	arr4 = ft_strsplit("    ", ' ');
-	while()
-	{
-
-	}
-	i = -1;
-	while (i++ != 0)
-		printf("%s\n", arr4[i]);
+	//i = 0;
+	//printf("\n");
+	//const char *s1 = "     split      this for   me         ";
+	//arr4 = ft_strsplit(s1, ' ');
+	//while(i != ft_word_count(s1, ' '))
+	//{
+	//	printf("%s\n", arr4[i]);
+	//	i++;
+	//}
 }
 
