@@ -14,7 +14,7 @@
 
 int	main(void)
 {
-	const char	s1[50] = "This is ab worbld!";
+	const char	s1[] = "This is ab worbld!";
 
 	printf("\n%s\n",strrchr(s1, 'b'));
 	printf("%s\n\n",ft_strrchr(s1, 'b'));

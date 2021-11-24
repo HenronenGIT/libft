@@ -39,12 +39,4 @@ int	main(void)
 	printf("|%s|\n", dst);
 	printf("%lu\n",ft_strlcat(dst6, src2, 15));
 	printf("|%s|\n\n", dst);
-
-	char dst7[] = "the cake is lie !\n I'm hidden lol\r\b";
-	char dst8[] = "there is no starts in the sky";
-	printf("%lu\n",strlcat(dst8,  dst7, 30));
-	printf("|%s|\n", dst8);
-	char dst9[] = "there is no starts in the sky";
-	printf("%lu\n",ft_strlcat(dst9, dst7, 30));
-	printf("|%s|\n\n", dst9);
 }
