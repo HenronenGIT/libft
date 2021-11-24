@@ -67,7 +67,7 @@ int	main(void)
 	ft_print_array(arr2, s2, c);
 
 	c = ' ';
-	char const *s3 = "    	Good    day    Hivers   ";
+	char const *s3 = "    Good    day    Hivers   ";
 	char		**arr3;
 	arr3 = ft_strsplit(s3, c);
 	ft_print_array(arr3, s3, c);

@@ -63,8 +63,8 @@ char	**ft_strsplit(char const *s, char c)
 		if (s[i] != c && s[i] != 0)
 		{
 			arr[j] = ft_strnew(ft_char_count(&s[i], c));
-			// malloc check
-			//printf("%zu\n", ft_char_count(&s[i], c));
+			if (!arr[j])
+				return (NULL);
 			//strncpy
 			while (s[i] != c && s[i] != '\0')
 			{
