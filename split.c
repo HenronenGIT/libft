@@ -1,37 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   split.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 11:12:44 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/24 10:25:45 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/24 10:39:44 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/24 10:50:47 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
+size_t	ft_char_count(const char *s, char c)
 {
-	size_t	d_len;
-	size_t	s_len;
 	size_t	i;
-	size_t	len;
+	size_t	char_count;
 
+	printf("%s\n", s);
+
+	char_count = 0;
 	i = 0;
-	d_len = ft_strlen(dest);
-	s_len = ft_strlen(((char *)src));
-	if (dstsize > d_len)
-		len = d_len + s_len;
-	else
-		len = dstsize + s_len;
-	while (src[i] != 0 && (d_len + 1) < dstsize)
+	while (s[i] != c)
 	{
-		dest[d_len] = src[i];
+		char_count++;
 		i++;
-		d_len++;
 	}
-	dest[d_len] = '\0';
-	return (len);
+	return (char_count);
+}
+
+int	main(void)
+{
+	char const	*s = "*Hello*fellow***students*";
+	size_t		i;
+	i = 0;
+	while (s[i] != 0)
+	{
+		if (s[i] != '*')
+		{
+
+			//printf("%zu\n", ft_char_count(&s[i] , '*'));
+			char *new[j] = malloc(ft_char_count);
+		}
+		i++;
+		}
 }

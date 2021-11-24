@@ -6,7 +6,7 @@
 #    By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 09:49:18 by hmaronen          #+#    #+#              #
-#    Updated: 2021/11/23 12:01:51 by hmaronen         ###   ########.fr        #
+#    Updated: 2021/11/24 11:32:35 by hmaronen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ ft_putstr.c ft_strlen.c ft_memalloc.c ft_memdel.c ft_strnew.c				\
 ft_strdel.c ft_strclr.c ft_striter.c ft_striteri.c ft_strmap.c ft_strmapi.c	\
 ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c ft_putendl.c	\
 ft_putnbr.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c	\
-ft_itoa.c
+ft_itoa.c ft_strsplit.c
 
 HEADER = libft.h
 O_FILES = *.o
