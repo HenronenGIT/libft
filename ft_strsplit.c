@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 17:18:05 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/24 13:02:13 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/24 14:31:41 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static size_t	ft_word_count(const char *s, char c)
 			is_word = 1;
 			word_count++;
 		}
-		if (s[i] == '*')
+		if (s[i] == c)
 			is_word = 0;
 		i++;
 	}
@@ -57,10 +57,12 @@ char	**ft_strsplit(char const *s, char c)
 	size_t	j;
 	size_t	k;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	j = 0;
 	k = 0;
-	arr = (char **)malloc(sizeof(char *) * ft_word_count(s, c) + 1);
+	arr = (char **)malloc(sizeof(char *) * ft_word_count(s, c));
 	while (s[i] != 0)
 	{
 		if (s[i] != c)

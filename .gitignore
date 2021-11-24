@@ -1,5 +1,6 @@
 a.out
 libft-unit-test/
+libft-unit-test-old/
 core
 Libftest/
 *.o
