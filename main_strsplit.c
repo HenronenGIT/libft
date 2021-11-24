@@ -6,16 +6,75 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 17:18:12 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/22 10:19:20 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/24 14:31:53 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static size_t	ft_word_count(const char *s, char c)
+{
+	size_t	i;
+	int		is_word;
+	size_t	word_count;
+
+	i = 0;
+	word_count = 0;
+	is_word = 0;
+	while (s[i] != 0)
+	{
+		if (s[i] != c && is_word == 0)
+		{
+			is_word = 1;
+			word_count++;
+		}
+		if (s[i] == c)
+			is_word = 0;
+		i++;
+	}
+	return (word_count);
+}
+
 int	main(void)
 {
-	ft_strsplit("*Hello*fellow***students*", '*');	
-	ft_strsplit("*****Hello****fellow***students*", '*');	
-	ft_strsplit("Hello", '*');	
-	ft_strsplit("*Hello*", '*');	
+	char	**arr;
+	char	**arr2;
+	char	**arr3;
+	char	**arr4;
+	size_t		i;
+
+	i = 0;
+	arr = ft_strsplit("*Hello*fellow***students*", '*');	
+	while (i != ft_word_count("*Hello*fellow***students*", '*'))
+	{
+		printf("%s\n", arr[i]);
+		i++;
+	}
+	i = 0;
+	printf("\n");
+
+	arr2 = ft_strsplit("   Hello fellow students ", ' ');
+	while (i != ft_word_count("   Hello fellow students ", ' '))
+	{
+		printf("%s\n", arr2[i]);
+		i++;
+	}
+	i = -1;
+	printf("\n");
+
+	arr3 = ft_strsplit("Hello", '*');
+	while (i++ != 0)
+		printf("%s\n", arr3[i]);
+	i = 0;
+	printf("\n");
+
+	arr4 = ft_strsplit("    ", ' ');
+	while()
+	{
+
+	}
+	i = -1;
+	while (i++ != 0)
+		printf("%s\n", arr4[i]);
 }
+

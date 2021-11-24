@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:54:20 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/23 13:49:12 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/24 13:28:51 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ int	main(void)
 	printf("%s\n", strnstr(s7, s8, 3));
 	printf("%s\n\n", ft_strnstr(s7, s8, 3));
 
-	printf("%s\n", strnstr("MZIRIBMZIRIBMZE123", "MZIRIBMZE", 9));
-	printf("%s\n\n", ft_strnstr("MZIRIBMZIRIBMZE123", "MZIRIBMZE", 9));
+	printf("%s\n", strnstr("lorem ipsum dolor sit amet", "dolor", 15));
+	printf("%s\n\n", ft_strnstr("lorem ipsum dolor sit amet", "dolor", 15));
 
 	printf("|%s|\n", strnstr("", "", 0));
 	printf("|%s|\n\n", ft_strnstr("", "", 0));
