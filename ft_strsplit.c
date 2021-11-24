@@ -40,7 +40,6 @@ static size_t	ft_char_count(const char *s, char c)
 	size_t	i;
 
 	i = 0;
-	//printf("%s\n", s);
 	while (s[i] != c && s[i] != '\0')
 		i++;
 	return (i);
@@ -53,17 +52,19 @@ char	**ft_strsplit(char const *s, char c)
 	size_t	j;
 	size_t	k;
 
-	if (!s)
-		return (NULL);
 	i = 0;
 	j = 0;
 	k = 0;
-	arr = (char **)malloc(sizeof(char *) * ft_word_count(s, c));
+	if (!s)
+		return (NULL);
+	arr = (char **)malloc(sizeof(char *) * (ft_word_count(s, c) + 1));
 	while (s[i] != 0)
 	{
-		if (s[i] != c)
+		if (s[i] != c && s[i] != 0)
 		{
 			arr[j] = ft_strnew(ft_char_count(&s[i], c));
+			// malloc check
+			//printf("%zu\n", ft_char_count(&s[i], c));
 			//strncpy
 			while (s[i] != c && s[i] != '\0')
 			{
@@ -74,7 +75,9 @@ char	**ft_strsplit(char const *s, char c)
 			j++;
 			k = 0;
 		}
-		i++;
+		else
+			i++;
 	}
+	arr[j] = NULL;
 	return (arr);
 }
