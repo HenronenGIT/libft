@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 17:18:12 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/24 14:31:53 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/24 17:07:56 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,46 +35,45 @@ static size_t	ft_word_count(const char *s, char c)
 	return (word_count);
 }
 
-int	main(void)
+void	ft_print_array(char **arr, const char *s, char c)
 {
-	char	**arr;
-	char	**arr2;
-	char	**arr3;
-	char	**arr4;
-	size_t		i;
+	size_t	i;
 
 	i = 0;
-	arr = ft_strsplit("*Hello*fellow***students*", '*');	
-	while (i != ft_word_count("*Hello*fellow***students*", '*'))
+	while (i != ft_word_count(s, c))
 	{
-		printf("%s\n", arr[i]);
+		printf("%s\n",arr[i]);
 		i++;
 	}
-	i = 0;
-	printf("\n");
-
-	arr2 = ft_strsplit("   Hello fellow students ", ' ');
-	while (i != ft_word_count("   Hello fellow students ", ' '))
-	{
-		printf("%s\n", arr2[i]);
-		i++;
-	}
-	i = -1;
-	printf("\n");
-
-	arr3 = ft_strsplit("Hello", '*');
-	while (i++ != 0)
-		printf("%s\n", arr3[i]);
-	i = 0;
-	printf("\n");
-
-	arr4 = ft_strsplit("    ", ' ');
-	while()
-	{
-
-	}
-	i = -1;
-	while (i++ != 0)
-		printf("%s\n", arr4[i]);
+	ft_putchar('\n');
 }
 
+int	main(void)
+{
+	char		c;
+	const char	*s1 = "*Hello*fellow***students*";
+	char const *s2 = "      Hello";
+	char const *s3 = "    	Good    day    Hivers ";
+	char const *s4 = "      split      this for   me       ";  
+	size_t		i;
+	char		**arr1;
+	char		**arr2;
+	char		**arr3;
+	char		**arr4;
+	i = 0;
+	c = '*';
+	arr1 = ft_strsplit(s1, c);	
+	ft_print_array(arr1, s1, c);
+
+	c = ' ';
+	arr2 = ft_strsplit(s2, c);
+	ft_print_array(arr2, s2, c);
+
+	c = ' ';
+	arr3 = ft_strsplit(s3, c);
+	ft_print_array(arr3, s3, c);
+
+	c = ' ';
+	arr4 = ft_strsplit(s4, c);
+	ft_print_array(arr4, s4, c); 
+}	
