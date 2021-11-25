@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:44:17 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/24 11:07:53 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/25 15:05:41 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@
 # include <ctype.h>
 # include <xlocale.h>
 # include <fcntl.h>
+
+typedef struct	s_list
+{
+				void *content;
+				size_t content_size;
+				struct s_list *next;
+}				t_list;
 
 # define inttoasc(n) ((n) % 10 + 48);
 
@@ -78,4 +85,5 @@ char	*ft_itoa(int n);
 int		negative_converter(int n, char *str);
 char	**ft_strsplit(char const *s, char c);
 int		ft_isspace(const char c);
+t_list	*ft_lstnew(void const *content, size_t content_size);
 #endif

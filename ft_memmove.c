@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:46:32 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/25 12:02:49 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/25 14:58:25 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			((unsigned char *)dst)[len - 1] = ((unsigned char *)src)[len - 1];
 			len--;
 		}
-	}
 	//else
 	//{
 	//	while (src_len != 0)
