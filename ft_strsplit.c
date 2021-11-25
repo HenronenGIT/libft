@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 17:18:05 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/25 10:36:47 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/25 13:18:53 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ static char	**ft_array_creator(char **arr, const char *s, char c)
 		if (s[i] != c && s[i] != 0)
 		{
 			arr[j] = ft_strnew(ft_char_count(&s[i], c));
+			if (!arr[j])
+				return (NULL);
 			while (s[i] != c && s[i] != '\0')
 			{
 				ft_strncpy(&arr[j][k++], &s[i], ft_char_count(&s[i], c));
@@ -81,6 +83,8 @@ char	**ft_strsplit(char const *s, char c)
 	if (!s)
 		return (NULL);
 	arr = (char **)malloc(sizeof(char *) * (ft_word_count(s, c) + 1));
+	if (!arr)
+		return (NULL);
 	ft_array_creator(arr, s, c);
 	return (arr);
 }
