@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:46:32 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/25 17:13:52 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/25 18:10:26 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t		i;
-	size_t		src_len;
+	char	*s = (char *)src;
+	char	*d = (char *)dst;
+	size_t	i;
 
-	src_len = 0;
 	i = 0;
-	if (((void *)dst) == 0 && ((void *)src) == 0)
+	if (d == 0 && s == 0)
 		return (NULL);
-	src_len = ft_strlen((char *)src);
-	//if (src_len < len)
+	if (d < s)
 	{
-		while (len != 0)
-			((unsigned char *)dst)[len - 1] = ((unsigned char *)src)[len - 1];
+		while (len > i)
+		{		
+			d[i] = s[i];
+			i++;
+		}
+	}
+	else
+	{
+		while (0 < len)
+		{
+			d[len - 1] = s[len - 1];
 			len--;
 		}
-	//else
-	//{
-	//	while (src_len != 0)
-	//	{
-	//		((unsigned char *)dst)[src_len] = ((unsigned char *)src)[src_len];
-	//		src_len--;
-	//		//i--;
-	//	}
-	//}
-	return (dst);
+	}
+	return (d);
 }
