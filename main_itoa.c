@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 13:04:14 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/23 13:08:57 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/25 12:11:58 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ int	main(void)
 	printf("%s\n", ft_itoa(0));
 	printf("%s\n", ft_itoa(-4444));
 	printf("%s\n", ft_itoa(-9));
-	printf("%s\n", ft_itoa(-2147483648));
+	//printf("%s\n", ft_itoa(-2147483648));
 	printf("%s\n", ft_itoa(2147483647));
 }

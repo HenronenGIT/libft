@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:46:25 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/23 12:07:45 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/25 12:02:50 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,41 @@
 
 int	main(void)
 {
-	char		dst1[50] = "0123456789";
-	char		dst2[50] = "0123456789";
-	char		dst3[50] = "0123456789";
-	char		dst4[50] = "0123456789";
-	char		dst5[50] = "0123456789";
-	char		dst6[50] = "0123456789";
-	char		dst7[50] = "0123456789";
+	//char		dst1[50] = "0123456789";
+	//char		dst2[50] = "0123456789";
+	//char		dst3[50] = "0123456789";
+	//char		dst4[50] = "0123456789";
+	//char		dst5[50] = "0123456789";
+	//char		dst6[50] = "0123456789";
+	//char		dst7[50] = "0123456789";
 
 
-	char		dst10[50] = "HELLO WORLD";
-	char		dst11[50] = "HELLO WORLD";
+	char		dst10[50] = "123456789";
+	char		dst11[50] = "123456789";
 	const char	*src;
 
-	src = "12346789";
-					
-	printf("%s\n",memmove(dst1, src, 5));
-	printf("%s\n\n",ft_memmove(dst2, src, 5));
-
-	printf("%s\n",memmove(dst3, src, 0));
-	printf("%s\n\n",ft_memmove(dst4, src, 0));
-
-	printf("%s\n",memmove(dst4, src, 5));
-	printf("%s\n\n",ft_memmove(dst5, src, 5));
-	//Same dst and src
-	memmove(&dst6[5], &dst6[3], 5);
-	printf("|%s|\n", dst6);
-	ft_memmove(&dst7[5], &dst7[3], 5);
-	printf("|%s|\n\n", dst7);
-
-	printf("%s\n",memmove(((void *)0), ((void *)0), 5));
-	printf("%s\n\n",ft_memmove(((void *)0), ((void *)0), 5));
-
+	src = "012345";
+	
 	printf("%s\n",memmove(dst10, dst10 + 3, 5));
 	printf("%s\n\n",ft_memmove(dst11, dst11 + 3,5));
+
+				
+	//printf("%s\n",memmove(dst1, src, 5));
+	//printf("%s\n\n",ft_memmove(dst2, src, 5));
+
+	//printf("%s\n",memmove(dst3, src, 0));
+	//printf("%s\n\n",ft_memmove(dst4, src, 0));
+
+	//printf("%s\n",memmove(dst4, src, 5));
+	//printf("%s\n\n",ft_memmove(dst5, src, 5));
+
+	////Same dst and src
+	//memmove(&dst6[5], &dst6[3], 5);
+	//printf("|%s|\n", dst6);
+	//ft_memmove(&dst7[5], &dst7[3], 5);
+	//printf("|%s|\n\n", dst7);
+
+	//printf("%s\n",memmove(((void *)0), ((void *)0), 5));
+	//printf("%s\n\n",ft_memmove(((void *)0), ((void *)0), 5));
 }
 

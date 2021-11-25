@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 17:18:05 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/24 17:07:55 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/25 10:36:47 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,8 @@ static size_t	ft_char_count(const char *s, char c)
 	return (i);
 }
 
-char	**ft_strsplit(char const *s, char c)
+static char	**ft_array_creator(char **arr, const char *s, char c)
 {
-	char	**arr;
 	size_t	i;
 	size_t	j;
 	size_t	k;
@@ -55,21 +54,14 @@ char	**ft_strsplit(char const *s, char c)
 	i = 0;
 	j = 0;
 	k = 0;
-	if (!s)
-		return (NULL);
-	arr = (char **)malloc(sizeof(char *) * (ft_word_count(s, c) + 1));
 	while (s[i] != 0)
 	{
 		if (s[i] != c && s[i] != 0)
 		{
 			arr[j] = ft_strnew(ft_char_count(&s[i], c));
-			if (!arr[j])
-				return (NULL);
-			//strncpy
 			while (s[i] != c && s[i] != '\0')
 			{
-				arr[j][k] = s[i];
-				k++;
+				ft_strncpy(&arr[j][k++], &s[i], ft_char_count(&s[i], c));
 				i++;
 			}
 			j++;
@@ -79,5 +71,16 @@ char	**ft_strsplit(char const *s, char c)
 			i++;
 	}
 	arr[j] = NULL;
+	return (arr);
+}
+
+char	**ft_strsplit(char const *s, char c)
+{
+	char	**arr;
+
+	if (!s)
+		return (NULL);
+	arr = (char **)malloc(sizeof(char *) * (ft_word_count(s, c) + 1));
+	ft_array_creator(arr, s, c);
 	return (arr);
 }

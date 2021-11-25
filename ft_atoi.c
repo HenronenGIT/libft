@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 09:24:31 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/22 16:53:58 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/25 10:42:31 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	ft_isspace(const char c)
 	else
 		return (0);
 }
+
 int	ft_atoi(const char *str)
 {
 	int		i;
