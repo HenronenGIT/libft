@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 13:04:06 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/25 12:12:30 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/25 17:10:30 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,41 +23,51 @@ static char	*converter(int n, char *str, int i)
 	return (str);
 }
 
-static char	*ft_negative_handler(int n, int i)
+static char	*ft_negative_handler(int i)
 {
-		char	*str;
+	char	*str;
 
-		str = ft_strnew(i + 1);
-		if (!str)
-			return (NULL);
-		str[0] = '-';
-		if (n == -2147483648)
-			return (str = "-2147483648");
-		else
-			return (str); 
+	str = ft_strnew(i + 1);
+	if (!str)
+		return (NULL);
+	str[0] = '-';
+	return (str);
+}
+
+static int	ft_digit_counter(int n)
+{
+	int	temp;
+	int	i;
+
+	i = 0;
+	temp = n;
+	while (temp != 0 && i++ != -1)
+		temp = temp / 10;
+	return (i);
 }
 
 char	*ft_itoa(int n)
 {
 	char		*str;
 	int			i;
-	int			temp;
 
-	temp = n;
-	i = 0;
-	while (temp != 0 && i++ != -1)
-		temp = temp / 10;
+	i = ft_digit_counter(n);
+	if (n == 0)
+		return (ft_strdup("0"));
 	if (n < 0)
 	{
-		str = ft_negative_handler(n, i);
+		if (n == -2147483648)
+			return (ft_strdup("-2147483648"));
+		else
+			str = ft_negative_handler(i);
 		n = n * -1;
 	}
 	else
 	{
 		str = ft_strnew(i);
+		if (!str)
+			return (NULL);
 		i = i - 1;
 	}
-	if (n == 0)
-		str[0] = '0';
 	return (converter(n, str, i));
 }

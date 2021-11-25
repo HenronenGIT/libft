@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_itoa.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/19 13:04:14 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/25 17:11:10 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/25 16:09:49 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/25 16:26:03 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(void)
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	printf("%s\n", ft_itoa(4));
-	printf("%s\n", ft_itoa(10));
-	printf("%s\n", ft_itoa(123456789));
-	printf("%s\n", ft_itoa(0));
-	printf("%s\n", ft_itoa(-4444));
-	printf("%s\n", ft_itoa(-9));
-	printf("%s\n", ft_itoa(-2147483648));
-	printf("%s\n", ft_itoa(2147483647));
-	printf("%s\n", ft_itoa('\0'));
+
+	*alst->del(content);
+
 }
