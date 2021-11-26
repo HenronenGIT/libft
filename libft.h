@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:44:17 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/26 16:16:29 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/26 17:11:58 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,5 @@ void	ft_print_list(t_list *list);
 t_list	*ft_lstnew(void const *content, size_t content_size);
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstadd(t_list **alst, t_list *new);
 #endif

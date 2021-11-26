@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 14:39:16 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/26 16:43:20 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/26 17:08:43 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static void	ft_list_del(void *content, size_t content_size)
 {
 	content_size = 0;
 	ft_memdel(&content);
+	printf("Pointer address after memdel%p\n", content);
 }
 
 int	main(void)
@@ -44,16 +45,12 @@ int	main(void)
 	ft_lstdel(&node1, del);
 	if (!node3)
 		printf("Node3 does not exist\n");
-	printf("%p\n", node3);
+	printf("Node 3 address: %p\n", node3);
 	if (!node2)
 		printf("Node2 content is NULL\n");
-	printf("%p\n", node2);
+	printf("Node 2 address: %p\n", node2);
 	if (!node1)
 		printf("Node1 content is NULL\n");
-	printf("%p\n", node1);
-
-	//ft_print_list(node1);
-	//ft_print_list(node2);
-	//ft_print_list(node3);
-	//ft_print_list(node4);
+	printf("Node 1 address: %p\n", node1);
+	ft_print_list(node1);
 }

@@ -6,10 +6,19 @@
 /*   By: hmaronen <hmaronen@student.Hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 13:16:23 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/26 13:19:34 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/26 17:17:23 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+Adds the element new at the beginning of the list.
+*/
 
+void ft_lstadd(t_list **alst, t_list *new)
+{
+
+
+
+}
