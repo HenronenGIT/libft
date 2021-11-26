@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   test_lstadd.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: hmaronen <hmaronen@student.Hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 16:09:49 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/25 16:26:03 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/26 13:16:14 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/26 13:19:23 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include	"libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+int	main(void)
 {
 
-	//if (!*alst || !del)
-	//	return ;
-	del((*alst)->content, (*alst)->content_size);
-	//free(*alst);
-	*alst = NULL;
 }

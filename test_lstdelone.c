@@ -15,8 +15,19 @@
 void	ft_list_del(void *content, size_t content_size)
 {
 	content_size = 0;
-	ft_memdel(&content);
-	
+	content = NULL;
+	//ft_memdel(content);
+	//free(content);
+}
+
+void	ft_print_list(t_list *list)
+{
+	while (list != NULL)
+	{
+		ft_putstr(list->content);
+		list = list->next;
+		ft_putchar('\n');
+	}
 }
 
 int	main(void)
@@ -26,6 +37,7 @@ int	main(void)
 	
 	del = &ft_list_del;
 	list = ft_lstnew("Hello", 6);
+	ft_print_list(list);
 	ft_lstdelone(&list, del);
 }
 
