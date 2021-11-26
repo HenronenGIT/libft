@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 13:38:39 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/25 15:05:37 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/26 13:50:10 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(void)
 
 	/* Normal int test */
 	//t_list	*list4;
-	//list4 = ft_lstnew(, 5);
+	//list4 = ft_lstnew(42, 4);
 
 	/* Content is null, but still sendint content size */
 	t_list	*list2;
