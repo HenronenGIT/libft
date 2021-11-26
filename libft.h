@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:44:17 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/25 16:26:05 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/26 14:07:21 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ char	*ft_itoa(int n);
 int		negative_converter(int n, char *str);
 char	**ft_strsplit(char const *s, char c);
 int		ft_isspace(const char c);
+void	ft_print_list(t_list *list);
 t_list	*ft_lstnew(void const *content, size_t content_size);
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 #endif
