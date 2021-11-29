@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 09:44:32 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/29 15:23:58 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/29 11:00:12 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/29 11:22:07 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
-{
-	size_t	i;
+/* Iterates the list lst and applies the function f to each link. */
 
-	if (!s)
-		return ;
-	i = 0;
-	while (s[i] != 0)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+{
+	while (lst)
 	{
-		s[i] = '\0';
-		i++;
-	}
+		f(lst);
+		lst = lst->next;
+	}	
 }
