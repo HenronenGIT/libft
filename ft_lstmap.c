@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 09:44:32 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/29 15:23:58 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/29 11:22:23 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/29 15:19:52 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
-{
-	size_t	i;
+/* Iterates a list lst and applies the function f to each link to
+* create a “fresh” list (using malloc(3)) resulting from the successive
+* applications of f. If the allocation fails, the function
+* returns NULL.*/
 
-	if (!s)
-		return ;
-	i = 0;
-	while (s[i] != 0)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+{
+	t_list	*new_list;
+	while (lst)
 	{
-		s[i] = '\0';
-		i++;
+		new_list = ft_lstnew(f(lst), ft_strlen(lst->content));
+		lst = lst->next;
 	}
+	return (new_list);
 }

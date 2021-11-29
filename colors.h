@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   colors.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 09:44:32 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/29 15:23:58 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/29 14:58:50 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/29 15:03:30 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef COLORS.H
+#define COLORS.H
 
-void	ft_strclr(char *s)
-{
-	size_t	i;
-
-	if (!s)
-		return ;
-	i = 0;
-	while (s[i] != 0)
-	{
-		s[i] = '\0';
-		i++;
-	}
-}
+# define	RED "\x1B[31m"
+# define	GREEN "\x1B[32m"
+# define	RESET "\x1B[0m"

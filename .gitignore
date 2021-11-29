@@ -5,3 +5,4 @@ libft-unit-test-old/
 core
 Libftest/
 *.o
+colors.h

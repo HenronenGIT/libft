@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 13:04:06 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/25 17:10:30 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/29 12:53:47 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static char	*converter(int n, char *str, int i)
 {
 	while (i >= 0 && str[i] != '-')
 	{
-		str[i] = inttoasc(n);
+		str[i] = n % 10 + 48;
 		n = n / 10;
 		i--;
 	}

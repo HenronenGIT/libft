@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 09:44:32 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/29 15:23:58 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/11/29 13:05:46 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/11/29 16:29:46 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
-{
-	size_t	i;
+void	test_1();
+void	test_2();
+void	test_3();
 
-	if (!s)
-		return ;
-	i = 0;
-	while (s[i] != 0)
-	{
-		s[i] = '\0';
-		i++;
-	}
+int	main(void)
+{
+	//test_1();
+	//test_2();
+	test_3();
+	//test_4();
+	//test_5();
+	//test_6();
+	//test_7();
 }

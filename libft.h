@@ -6,28 +6,25 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:44:17 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/26 17:11:58 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/29 16:29:50 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stdio.h> //temp
 # include <string.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <ctype.h>
-# include <xlocale.h>
-# include <fcntl.h>
+//# include <unistd.h>
+//# include <stdlib.h>
+//# include <ctype.h>
+//# include <xlocale.h>
+//# include <fcntl.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
-				void *content;
-				size_t content_size;
-				struct s_list *next;
-}				t_list;
-
-# define inttoasc(n) ((n) % 10 + 48);
+	void			*content;	
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
 
 void	ft_lcase(char *s);
 void	ft_putchar(char c);
@@ -90,4 +87,6 @@ t_list	*ft_lstnew(void const *content, size_t content_size);
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstadd(t_list **alst, t_list *new);
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 #endif

@@ -6,16 +6,26 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 13:38:21 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/26 14:17:31 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/29 10:29:24 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*	Allocates (with malloc(3)) and returns a “fresh” link. The
+*	variables content and content_size of the new link are initialized
+*	by copy of the parameters of the function. If the parameter content is nul,
+*	the variable content is initialized to
+*	NULL and the variable content_size is initialized to 0 even
+*	if the parameter content_size isn’t. The variable next is
+*	initialized to NULL. If the allocation fails, the function returns
+*	NULL.
+*/
+
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*tmp;
-		
+	
 	tmp = malloc(sizeof(t_list));
 	if (!tmp)
 		return (NULL);
