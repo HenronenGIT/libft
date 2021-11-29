@@ -42,10 +42,5 @@ int	main(void)
 
 	printf("%s\n",memmove(((void *)0), ((void *)0), 5));
 	printf("%s\n\n",ft_memmove(((void *)0), ((void *)0), 5));
-
-	char		dst10[50] = "123456789";
-	char		dst11[50] = "123456789";
-	printf("%s\n",memmove(dst10, dst10 + 3, 5));
-	printf("%s\n\n",ft_memmove(dst11, dst11 + 3,5));
 }
 
