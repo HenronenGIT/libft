@@ -14,11 +14,20 @@
 
 int	main(void)
 {
-	t_list	list;
+	t_list	*list;
+	t_list	*list2;
 
+	list2 = NULL;
 	const char *s1;
-	s1 = "Hello world!";
+	const char *s2;
+	s1 = "This is string 1";
+	s2 = "This is string 2";
 	
-	list = ft_lstnew(s1, ft_strlen(s1));
+	list = ft_lstnew(s1, ft_strlen((char *)s1));
+	
 
+	//ft_print_list(list);
+	//printf("%s\n", (char *)list->content);
+	//ft_lstadd(&list, list2);
+	
 }
