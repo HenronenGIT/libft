@@ -6,47 +6,11 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 17:18:12 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/25 10:36:53 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/30 17:24:24 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	ft_word_count(const char *s, char c)
-{
-	size_t	i;
-	int		is_word;
-	size_t	word_count;
-
-	i = 0;
-	word_count = 0;
-	is_word = 0;
-	while (s[i] != 0)
-	{
-		if (s[i] != c && is_word == 0)
-		{
-			is_word = 1;
-			word_count++;
-		}
-		if (s[i] == c)
-			is_word = 0;
-		i++;
-	}
-	return (word_count);
-}
-
-static void	ft_print_array(char **arr, const char *s, char c)
-{
-	size_t	i;
-
-	i = 0;
-	while (i <=  ft_word_count(s, c))
-	{
-		printf("%s\n",arr[i]);
-		i++;
-	}
-	ft_putchar('\n');
-}
 
 int	main(void)
 {

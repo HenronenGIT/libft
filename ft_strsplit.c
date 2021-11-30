@@ -6,34 +6,11 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 17:18:05 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/25 17:42:53 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/30 17:25:28 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	ft_word_count(const char *s, char c)
-{
-	size_t	i;
-	int		is_word;
-	size_t	word_count;
-
-	i = 0;
-	word_count = 0;
-	is_word = 0;
-	while (s[i] != 0)
-	{
-		if (s[i] != c && is_word == 0)
-		{
-			is_word = 1;
-			word_count++;
-		}
-		if (s[i] == c)
-			is_word = 0;
-		i++;
-	}
-	return (word_count);
-}
 
 static size_t	ft_char_count(const char *s, char c)
 {

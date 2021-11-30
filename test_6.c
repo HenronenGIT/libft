@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 14:57:55 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/30 15:33:35 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/30 17:37:39 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,15 @@ static char	ft_lcase_map(char c)
 		c = c + 32;
 	return (c);
 }
+
+char	ft_lcase_mapi(unsigned int n, char c)
+{
+	n = 0;
+	if (c >= 'A' && c <= 'Z')
+		c = c + 32;
+	return (c);
+}
+
 static void	ft_lcasei(unsigned int i , char *s)
 {
 	i = 0;
@@ -119,13 +128,108 @@ void	test_6()
 	printf(RESET);
 
 	char (*f4)(char);
+	char	*s1;
 	char	*s2;
 
+	s1 = "HELLO woRLD!";
 	s2 = NULL;
 	f4 = &ft_lcase_map;
 
-	printf("%s\n",ft_strmap("HELLO woRLD!", f4));
-	printf("%s\n",ft_strmap("hello world!", f4));
+	printf("Before strmap():\nHELLO woRLD!\n");
+	printf("After strmap():\n%s\n\n", ft_strmap(s1, f4));
 
-	ft_strmap(s2, f4);
+	printf("Sending NULL:\n%s\n", ft_strmap(s2, f4));
+	printf("\n");
+
+	/*	strmapi	*/
+	printf("%sFT_STRMAP(I) TESTS\n", GREEN);
+	printf(RESET);
+	char (*f5)(unsigned int, char);
+	char	*str1;
+	char	*str2;
+
+	str1 = "HELLO woRLD!";
+	str2 = NULL;
+	f5 = &ft_lcase_mapi;
+
+	printf("Before strmap(I):\n%s\n", str1);
+	printf("After strmap(I):\n%s\n\n",ft_strmapi(str1, f5));
+
+	printf("Sending NULL pointer:\n%s\n", ft_strmapi(str2, f5));
+
+	/*	strstrim	*/
+	printf("%sFT_STRTRIM TESTS\n", GREEN);
+	printf(RESET);
+	const char ss1[] = " \t, Helloworld \t,      ";
+	const char ss2[] = "Helloworld \t \n";
+	const char ss3[] = "Helloworld";
+	const char ss4[] = "He ll\nowo\trl,d";
+	const char ss5[] = "         ";
+	printf("Before ft_strtrim():\n|%s|\n", ss1);
+	printf("After ft_strtrim():\n|%s|\n\n", ft_strtrim(ss1));
+
+	printf("Before ft_strtrim():\n|%s|\n", ss2);
+	printf("After ft_strtrim():\n|%s|\n\n", ft_strtrim(ss2));
+
+	printf("Before ft_strtrim():\n|%s|\n", ss3);
+	printf("After ft_strtrim():\n|%s|\n\n", ft_strtrim(ss3));
+
+	printf("Before ft_strtrim():\n|%s|\n", ss4);
+	printf("After ft_strtrim():\n|%s|\n\n", ft_strtrim(ss4));
+
+	printf("Before ft_strtrim():\n|%s|\n", ss5);
+	printf("After ft_strtrim():\n|%s|\n\n", ft_strtrim(ss5));
+
+	/*	strsplit	*/
+	printf("%sFT_STRSPLIT TESTS\n", GREEN);
+	printf(RESET);
+	ft_putstr(RESET);
+
+	char		c;
+	i = 0;
+	c = '*';
+	const char	*sss1 = "*Hello*fellow***students*";
+	char		**arr1;
+	printf("Before strsplit():\n%s\n\n", sss1);
+	arr1 = ft_strsplit(sss1, c);
+	printf("After strsplit:\n");
+	ft_print_array(arr1, sss1, c);
+
+	c = '*';
+	char const *sss2 = "******Hello*";
+	char		**arr2;
+	printf("Before strsplit():\n%s\n\n", sss2);
+	arr2 = ft_strsplit(sss2, c);
+	printf("After:\n");
+	ft_print_array(arr2, sss2, c);
+
+	c = ' ';
+	char const *sss3 = "    Good    day    Hivers   ";
+	char		**arr3;
+	printf("Before strsplit():\n|%s|\n\n", sss3);
+	arr3 = ft_strsplit(sss3, c);
+	printf("After:\n");
+	ft_print_array(arr3, sss3, c);
+
+	c = ' ';
+	char const *sss4 = "      This      is  maRVIN  !       ";
+	char		**arr4;
+	printf("Before strsplit():\n|%s|\n\n", sss4);
+	arr4 = ft_strsplit(sss4, c);
+	printf("After:\n");
+	ft_print_array(arr4, sss4, c);
+
+	/*	ft_itoa	*/
+	printf("%sFT_ITOA TESTS\n", GREEN);
+	printf(RESET);
+
+	printf("%s\n", ft_itoa(4));
+	printf("%s\n", ft_itoa(10));
+	printf("%s\n", ft_itoa(123456789));
+	printf("%s\n", ft_itoa(0));
+	printf("%s\n", ft_itoa(-4444));
+	printf("%s\n", ft_itoa(-9));
+	printf("%s\n", ft_itoa(-2147483648));
+	printf("%s\n", ft_itoa(2147483647));
+	printf("%s\n", ft_itoa('\0'));
 }

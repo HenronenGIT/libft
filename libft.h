@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:44:17 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/30 14:30:18 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/30 17:26:23 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,6 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstadd(t_list **alst, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+size_t	ft_word_count(const char *s, char c);
+void	ft_print_array(char **arr, const char *s, char c);
 #endif
