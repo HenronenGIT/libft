@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:44:17 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/29 16:29:50 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/11/30 14:30:18 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <ctype.h>
 # include <xlocale.h>
-# include <fcntl.h>
 
 typedef struct s_list
 {

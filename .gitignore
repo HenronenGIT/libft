@@ -6,3 +6,4 @@ core
 Libftest/
 *.o
 colors.h
+moulitest/
