@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 11:22:28 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/29 12:43:10 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/12/01 11:39:08 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static t_list	*ft_lcase_list(t_list *elem)
 {
-	ft_tolower((int)elem->content);
 	return (elem);
 }
 
@@ -49,6 +48,9 @@ int	main(void)
 	list3->next = list4;
 
 	t_list	*new_list;
+	/*	not work	
+	new_list = ft_lstnew(list->content, list->content_size);
+	*/
 	new_list = ft_lstmap(list, f);
 	ft_print_list(new_list);
 }
