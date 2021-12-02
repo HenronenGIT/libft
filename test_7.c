@@ -23,6 +23,13 @@
  *	ft_lstiter
  *	ft_lstmap
  */
+
+static void	ft_list_del(void *content, size_t content_size)
+{
+	content_size = 0;
+	ft_memdel(&content);
+
+}
 void	test_7()
 {
 	/*	lstnew	*/
@@ -70,5 +77,25 @@ void	test_7()
 	ft_print_list(list4);
 
 	/*	lstdelone	*/
+	void	(*del)(void *, size_t);
+
+	del = &ft_list_del;
+
+	/* Normal test */	
+	const char *s1;
+	s1 = "Hello!";
+	t_list	*list6;
+	list = ft_lstnew(s1, ft_strlen((char *)s1));
+	ft_print_list(list);
+	ft_lstdelone(&list, del);
+	ft_print_list(list);
+
+	/* If sending empty string */
+	t_list *list7;
+	const char *s2;
+	s2 = NULL;
+	list2 = ft_lstnew(s2, 0);
+	ft_lstdelone(&list2, del);
+	ft_print_list(list2);
 
 }
