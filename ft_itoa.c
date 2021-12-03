@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 13:04:06 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/29 12:53:47 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/12/03 13:30:56 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,6 @@ static char	*ft_negative_handler(int i)
 		return (NULL);
 	str[0] = '-';
 	return (str);
-}
-
-static int	ft_digit_counter(int n)
-{
-	int	temp;
-	int	i;
-
-	i = 0;
-	temp = n;
-	while (temp != 0 && i++ != -1)
-		temp = temp / 10;
-	return (i);
 }
 
 char	*ft_itoa(int n)
