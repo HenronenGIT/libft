@@ -26,13 +26,14 @@ ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lcase.c ft_print_array.c			\
 ft_word_count.c
 
 HEADER = libft.h
-O_FILES = *.o
-
-all: $(NAME)
+O_FILES = $(SRCS:.c=.o)
 
 $(NAME):
 	gcc $(FLAGS) -I $(HEADER) -c $(SRCS)
 	ar rc $(NAME) $(O_FILES)
+	ranlib $(NAME)
+
+all: $(NAME)
 
 clean:
 	rm -f $(O_FILES)
@@ -41,3 +42,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
