@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 /*	Allocates (with malloc(3)) and returns a “fresh” link. The
 *	variables content and content_size of the new link are initialized
