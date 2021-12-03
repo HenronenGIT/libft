@@ -11,27 +11,25 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 /* Iterates a list lst and applies the function f to each link to
 * create a “fresh” list (using malloc(3)) resulting from the successive
 * applications of f. If the allocation fails, the function
 * returns NULL.*/
 
-//t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
-//{
-//	t_list	*tmp;
-//	t_list	*new_list;
-//
-//	f = NULL;
-//	
-//	tmp = ft_lstnew(lst->content, lst->content_size);
-//	if (!tmp)
-//		return (NULL);
-//	new_list = tmp;
-//	printf("map 2");
-//	lst = lst->next;
-//	printf("map 1");
-//
-//	return (tmp);
-//
-//}
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+{
+	t_list	*tmp;
+
+	f = NULL;
+	//tmp = ft_lstnew(lst->content, lst->content_size);
+	tmp = (t_list *)malloc(sizeof(t_list));
+	if (!tmp)
+		return (NULL);
+	tmp->content = malloc(sizeof(size_t) * lst->content_size);
+	tmp->content = lst->content;
+	tmp->next = NULL;
+
+	return (tmp);
+}
