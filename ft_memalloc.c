@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 void	*ft_memalloc(size_t size)
 {
@@ -23,16 +24,3 @@ void	*ft_memalloc(size_t size)
 		ft_memset(mem_area, 0, size);
 	return (mem_area);
 }
-
-//void	*ft_memset(void *b, int c, size_t len)
-//{
-//	size_t	i;
-//
-//	i = 0;
-//	while (i != len)
-//	{
-//		((unsigned char *)b)[i] = (unsigned char)c;
-//		i++;
-//	}
-//	return (b);
-//}

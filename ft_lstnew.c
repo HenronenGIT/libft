@@ -6,11 +6,12 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 13:38:21 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/12/01 11:54:28 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/12/02 10:13:16 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 /*	Allocates (with malloc(3)) and returns a “fresh” link. The
 *	variables content and content_size of the new link are initialized
@@ -25,8 +26,8 @@
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*tmp;
-	
-	tmp = malloc(sizeof(t_list));
+
+	tmp = (t_list *)malloc(sizeof(t_list));
 	if (!tmp)
 		return (NULL);
 	if (content == NULL)

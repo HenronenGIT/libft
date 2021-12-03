@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 /*	Takes as a parameter the adress of a pointer to a link and
 *	frees the memory of this link and every successors of that link
