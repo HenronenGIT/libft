@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <string.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -87,4 +88,5 @@ size_t	ft_word_count(const char *s, char c);
 void	ft_print_array(char **arr, const char *s, char c);
 int		ft_isspace(const char c);
 int		ft_digit_counter(int n);
+void	ft_lstaddfront(t_list **alst, t_list *new);
 #endif

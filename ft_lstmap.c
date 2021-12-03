@@ -23,6 +23,8 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	t_list	*head;
 	t_list	*tmp;
 
+	if (!lst || !f)
+		return (NULL);
 	head = f(ft_lstnew(lst->content, lst->content_size));
 	if (!head)
 		return (NULL);
@@ -30,7 +32,9 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	while (lst)
 	{
 		tmp = f(ft_lstnew(lst->content, lst->content_size));
-		ft_lstadd(&head, tmp);
+		if (!tmp)
+			return (NULL);
+		ft_lstaddfront(&head, tmp);
 		lst = lst->next;
 	}
 	return (head);
