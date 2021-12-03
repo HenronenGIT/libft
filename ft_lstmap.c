@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 /* Iterates a list lst and applies the function f to each link to
 * create a “fresh” list (using malloc(3)) resulting from the successive

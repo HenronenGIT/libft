@@ -1,5 +1,4 @@
 a.out
-main.c
 a.out.dSYM/
 libft-unit-test/
 libft-unit-test-old/
@@ -9,5 +8,4 @@ Libftest/
 colors.h
 moulitest/
 libft_testmains/
-test_*
 42FileChecker/
