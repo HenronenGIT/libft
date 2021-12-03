@@ -29,14 +29,7 @@ static int	convertor(char *str)
 	return (nb);
 }
 
-int	ft_isspace(const char c)
-{
-	if (c == '\t' || c == '\n' || c == '\v' || c == '\f'
-		|| c == '\r' || c == ' ')
-		return (1);
-	else
-		return (0);
-}
+
 
 int	ft_atoi(const char *str)
 {

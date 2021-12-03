@@ -37,6 +37,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	}
 	else
 	{
+		tmp->content_size = content_size;
 		tmp->content = ft_memalloc(content_size);
 		ft_memcpy(tmp->content, content, content_size);
 	}

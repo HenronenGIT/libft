@@ -17,21 +17,16 @@
 * applications of f. If the allocation fails, the function
 * returns NULL.*/
 
-//t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
-//{
-//	t_list	*tmp;
-//	t_list	*new_list;
-//
-//	f = NULL;
-//	
-//	tmp = ft_lstnew(lst->content, lst->content_size);
-//	if (!tmp)
-//		return (NULL);
-//	new_list = tmp;
-//	printf("map 2");
-//	lst = lst->next;
-//	printf("map 1");
-//
-//	return (tmp);
-//
-//}
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+{
+	t_list	*tmp;
+
+	f = NULL;
+	
+	tmp = ft_lstnew(lst->content, lst->content_size);
+	if (!tmp)
+		return (NULL);
+    tmp->next = NULL;
+	return (tmp);
+
+}
