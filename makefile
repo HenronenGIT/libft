@@ -28,12 +28,12 @@ ft_word_count.c ft_digit_counter.c ft_isspace.c
 HEADER = libft.h
 O_FILES = $(SRCS:.c=.o)
 
+all: $(NAME)
+
 $(NAME):
 	gcc $(FLAGS) -I $(HEADER) -c $(SRCS)
 	ar rc $(NAME) $(O_FILES)
 	ranlib $(NAME)
-
-all: $(NAME)
 
 clean:
 	rm -f $(O_FILES)

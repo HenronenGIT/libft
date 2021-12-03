@@ -29,8 +29,6 @@ static int	convertor(char *str)
 	return (nb);
 }
 
-
-
 int	ft_atoi(const char *str)
 {
 	int		i;
