@@ -46,8 +46,9 @@ char	*ft_itoa(int n)
 	{
 		if (n == -2147483648)
 			return (ft_strdup("-2147483648"));
-		else
-			str = ft_negative_handler(i);
+		str = ft_negative_handler(i);
+		if (!str)
+			return (NULL);
 		n = n * -1;
 	}
 	else
