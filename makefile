@@ -32,8 +32,8 @@ O_FILES = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	gcc $(FLAGS) -I $(HEADER) -c $(SRCS)
-	ar rc $(NAME) $(O_FILES)
+	@@gcc $(FLAGS) -I $(HEADER) -c $(SRCS)
+	@@ar rc $(NAME) $(O_FILES)
 	ranlib $(NAME)
 
 clean:
