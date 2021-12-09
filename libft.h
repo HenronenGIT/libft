@@ -25,7 +25,7 @@ typedef struct s_list
 
 void	ft_lcase(char *s);
 void	ft_putchar(char c);
-void	ft_putstr(char *str);
+void	ft_putstr(char const *str);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
@@ -88,5 +88,5 @@ size_t	ft_word_count(const char *s, char c);
 void	ft_print_array(char **arr, const char *s, char c);
 int		ft_isspace(const char c);
 int		ft_digit_counter(int n);
-void	ft_lstaddfront(t_list **alst, t_list *new);
+void	ft_lstadd_back(t_list **alst, t_list *new);
 #endif

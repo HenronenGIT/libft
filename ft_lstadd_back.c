@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   colors.h                                           :+:      :+:    :+:   */
+/*   ft_add_front.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 14:58:50 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/30 10:53:37 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/12/03 18:05:01 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/12/03 18:05:02 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COLORS_H
-# define COLORS_H
+#include "libft.h"
 
-# include <stdio.h>
+void	ft_lstadd_back(t_list **alst, t_list *new)
+{
+	t_list	*tmp;
 
-# define RED "\x1B[31m"
-# define GREEN "\x1B[32m"
-# define RESET "\x1B[0m"
-
-#endif
+	if (!*alst || !new)
+		return ;
+	tmp = *alst;
+	while (tmp->next != 0)
+		tmp = tmp->next;
+	tmp->next = new;
+	new->next = NULL;
+}
