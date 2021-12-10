@@ -1,7 +1,7 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
@@ -33,14 +33,13 @@ all: $(NAME)
 
 $(NAME):
 	@@gcc $(FLAGS) -I $(HEADER) -c $(SRCS)
-	@@ar rc $(NAME) $(O_FILES)
-	ranlib $(NAME)
+	@@ar rc -s $(NAME) $(O_FILES)
 
 clean:
-	rm -f $(O_FILES)
+	@@/bin/rm -f $(O_FILES)
 
 fclean: clean
-	rm -f $(NAME)
+	@@/bin/rm -f $(NAME)
 
 re: fclean all
 
