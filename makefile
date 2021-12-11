@@ -6,7 +6,7 @@
 #    By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 09:49:18 by hmaronen          #+#    #+#              #
-#    Updated: 2021/12/03 13:30:20 by hmaronen         ###   ########.fr        #
+#    Updated: 2021/12/11 12:45:00 by hmaronen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_lcase.c					\
 ft_print_array.c ft_word_count.c ft_digit_counter.c ft_isspace.c			\
 ft_lstadd_back.c
 
-HEADER = libft.h
+HEADER = ./includes
 O_FILES = $(SRCS:.c=.o)
 
 all: $(NAME)

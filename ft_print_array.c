@@ -12,18 +12,15 @@
 
 #include "libft.h"
 
-void	ft_print_array(char **arr, const char *s, char c)
+void	ft_print_array(char **arr)
 {
 	size_t	i;
-	size_t	word_count;
 
-	word_count = ft_word_count(s, c);
 	i = 0;
-	while (i <= word_count)
+	while (arr[i] != NULL)
 	{
 		ft_putstr(arr[i]);
 		ft_putchar('\n');
 		i++;
 	}
-	ft_putchar('\n');
 }
