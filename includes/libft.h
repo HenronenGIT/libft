@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:44:17 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/12/03 13:32:24 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/12/11 15:10:22 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,5 @@ int		ft_isspace(const char c);
 int		ft_digit_counter(int n);
 void	ft_lstadd_back(t_list **alst, t_list *new);
 void	ft_lcase(char *s);
+void	ft_swap_array(char **argv1, char **argv2);
 #endif
