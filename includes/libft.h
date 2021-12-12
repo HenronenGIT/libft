@@ -76,7 +76,6 @@ void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_itoa(int n);
 char	**ft_strsplit(char const *s, char c);
-void	ft_print_list(t_list *list);
 t_list	*ft_lstnew(void const *content, size_t content_size);
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
@@ -85,7 +84,7 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 size_t	ft_word_count(const char *s, char c);
-void	ft_print_array(char **arr, const char *s, char c);
+void	ft_print_array(char **arr);
 int		ft_isspace(const char c);
 int		ft_digit_counter(int n);
 void	ft_lstadd_back(t_list **alst, t_list *new);
