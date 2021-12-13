@@ -32,7 +32,7 @@ O_FILES = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	@@gcc $(FLAGS) -I $(HEADER) -c $(SRCS)
+	@@gcc $(FLAGS) -I ./includes -c $(SRCS)
 	@@ar rc $(NAME) $(O_FILES)
 	ranlib $(NAME)
 
