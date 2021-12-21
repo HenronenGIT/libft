@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 09:44:17 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/12/11 15:10:22 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/12/21 17:53:51 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ void	ft_lstadd(t_list **alst, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
-void	ft_print_list(t_list *list);
 size_t	ft_word_count(const char *s, char c);
 void	ft_print_array(char **arr);
 int		ft_isspace(const char c);
@@ -91,4 +90,6 @@ int		ft_digit_counter(int n);
 void	ft_lstadd_back(t_list **alst, t_list *new);
 void	ft_lcase(char *s);
 void	ft_swap_array(char **argv1, char **argv2);
+void	ft_print_list(t_list *list);
+char	*ft_strndup(const char *str, size_t n);
 #endif
