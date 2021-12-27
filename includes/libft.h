@@ -90,4 +90,5 @@ int		ft_digit_counter(int n);
 void	ft_lstadd_back(t_list **alst, t_list *new);
 void	ft_lcase(char *s);
 void	ft_print_list(t_list *list);
+void	ft_realloc(char **s1, const char *s2);
 #endif
