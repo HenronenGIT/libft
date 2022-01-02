@@ -6,7 +6,7 @@
 /*   By: hmaronen <hmaronen@student.Hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:05:15 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/12/27 17:58:29 by hmaronen         ###   ########.fr       */
+/*   Updated: 2021/12/27 14:05:17 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	ft_realloc(char **s1, char const *s2)
 	temp = ft_strdup(*s1);
 	if (temp == NULL)
 		return ;
-	free(*s1);
+	ft_memdel((void **)s1);
 	*s1 = ft_strnew(len);
 	ft_strcpy(*s1, temp);
-	free(temp);
+	ft_memdel((void **)&temp);
 	ft_strcat(*s1, s2);
 }
