@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_array.c                                   :+:      :+:    :+:   */
+/*   find_eofl.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 17:13:20 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/30 17:18:08 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/12/17 11:06:47 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/12/20 17:56:54 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_print_array(char **arr)
+size_t	find_eofl(char *s)
 {
-	size_t	i;
+	size_t	j;
 
-	i = 0;
-	while (arr[i] != NULL)
-	{
-		ft_putstr(arr[i]);
-		ft_putchar('\n');
-		i++;
-	}
+	j = 0;
+	while (s[j] != '\n')
+		j++;
+	return (j);
 }

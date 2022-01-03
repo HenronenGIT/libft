@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 09:49:18 by hmaronen          #+#    #+#              #
-#    Updated: 2021/12/03 13:30:20 by hmaronen         ###   ########.fr        #
+#    Updated: 2021/12/11 12:45:00 by hmaronen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,23 +24,22 @@ ft_putnbr.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c	\
 ft_itoa.c ft_strsplit.c ft_print_list.c ft_lstnew.c ft_lstdelone.c			\
 ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_lcase.c					\
 ft_print_array.c ft_word_count.c ft_digit_counter.c ft_isspace.c			\
-ft_lstadd_back.c
+ft_lstadd_back.c find_eofl.c
 
-HEADER = libft.h
+HEADER = ./includes
 O_FILES = $(SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME):
-	@@gcc $(FLAGS) -I ./includes -c $(SRCS)
-	@@ar rc $(NAME) $(O_FILES)
-	ranlib $(NAME)
+	@@gcc $(FLAGS) -I $(HEADER) -c $(SRCS)
+	@@ar rc -s $(NAME) $(O_FILES)
 
 clean:
-	rm -f $(O_FILES)
+	@@/bin/rm -f $(O_FILES)
 
 fclean: clean
-	rm -f $(NAME)
+	@@/bin/rm -f $(NAME)
 
 re: fclean all
 
