@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_swap_array.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: hmaronen <hmaronen@student.Hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 10:33:41 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/23 12:23:18 by hmaronen         ###   ########.fr       */
+/*   Created: 2021/12/11 15:07:47 by hmaronen          #+#    #+#             */
+/*   Updated: 2021/12/11 15:08:49 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+void	ft_swap_array(char **argv1, char **argv2)
 {
-	if (ap == NULL)
-		return ;
-	free(*ap);
-	*ap = NULL;
+	char	*temp;
+
+	temp = *argv1;
+	*argv1 = *argv2;
+	*argv2 = temp;
 }
