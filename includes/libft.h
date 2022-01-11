@@ -89,9 +89,5 @@ int		ft_isspace(const char c);
 int		ft_digit_counter(int n);
 void	ft_lstadd_back(t_list **alst, t_list *new);
 void	ft_lcase(char *s);
-void	ft_swap_array(char **argv1, char **argv2);
 void	ft_print_list(t_list *list);
-char	*ft_strndup(const char *str, size_t n);
-size_t	find_eofl(char *str);
-void	ft_realloc(char **s1, const char *s2);
 #endif
