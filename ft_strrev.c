@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 16:15:56 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/12 17:09:33 by hmaronen         ###   ########.fr       */
+/*   Created: 2022/05/11 16:15:34 by hmaronen          #+#    #+#             */
+/*   Updated: 2022/05/11 16:15:41 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_strrev(char *str)
 {
-	char	*str;
+	char	*rev_str;
+	int		i;
+	int		j;
 
-	str = (char *)malloc(sizeof(char) * (size + 1));
-	if (str == 0)
-		return (NULL);
-	else
-		ft_bzero(str, size + 1);
-	return (str);
+	i = 0;
+	j = 0;
+	while (str[i])
+		i++;
+	rev_str = ft_strnew(i);
+	while (--i >= 0)
+		rev_str[j++] = str[i];
+	return (rev_str);
 }

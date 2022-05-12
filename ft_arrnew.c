@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_arrnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 16:15:56 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/12 17:09:33 by hmaronen         ###   ########.fr       */
+/*   Created: 2022/01/24 11:50:14 by hmaronen          #+#    #+#             */
+/*   Updated: 2022/01/24 11:50:16 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char	**ft_arrnew(size_t str_count, size_t str_len)
 {
-	char	*str;
+	char	**arr;
+	int		i;
 
-	str = (char *)malloc(sizeof(char) * (size + 1));
-	if (str == 0)
+	i = -1;
+	arr = (char **)malloc(sizeof(char *) * (str_count + 1));
+	if (!arr)
 		return (NULL);
-	else
-		ft_bzero(str, size + 1);
-	return (str);
+	arr[str_count] = NULL;
+	while (++i != (int)str_count)
+	{
+		arr[i] = ft_strnew(str_len);
+		if (!arr[i])
+			return (NULL);
+		ft_bzero(arr[i], str_len);
+	}
+	return (arr);
 }
