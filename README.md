@@ -1,6 +1,6 @@
-# libft - Your first own library
+<p align="middle"><img src="./README/pics/library.png" width=60%></p>
 
-<p align="middle"><img src="./README/pics/library.png" ></p>
+# libft - Your first own library
 
 <p align="left"><img src="./README/pics/score.png" height="150" /></p>
 
@@ -11,8 +11,7 @@ Have you ever wanted to create plenty of libc functions from scratch - I bet you
 
 ## PDF
 
-<p > href="./README/pdf/libft.en.pdf"/></p>
-
+<a href="./README/libft.en.pdf">Libft PDF</a>
 
 ### Keywords
 - Library
