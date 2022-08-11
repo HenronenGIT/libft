@@ -1,19 +1,18 @@
 # libft - Your first own library
 
-<p align="left"><img src="./README/letters.jpg" ></p>
+<p align="middle"><img src="./README/pics/library.png" ></p>
 
-# project name - "quote"
+<p align="left"><img src="./README/pics/score.png" height="150" /></p>
 
-<p align="middle"><img src="PATH_TO_BANNER_PIC" height="150" /></p>
+> <em> The aim of this project is to code a C library regrouping usual functions that you’ll be allowed to use in all your other projects. </em>
 
-> <em> QUOTE FROM PDF</em>
-
-## Description
+## Description 
 Have you ever wanted to create plenty of libc functions from scratch - I bet you have. Well here are my version of many of them and even some bonuses. With these functions you will have easier time to creating lot of C language project!
 
 ## PDF
 
-https://cdn.intra.42.fr/pdf/pdf/6609/ft_printf.en.pdf
+<p > href="./README/pdf/libft.en.pdf"/></p>
+
 
 ### Keywords
 - Library
