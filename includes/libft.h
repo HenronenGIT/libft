@@ -16,7 +16,9 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "get_next_line.h"
+# include <limits.h>
+# include "../includes/get_next_line.h"
+# include "../includes/ft_printf.h"
 
 typedef struct s_list
 {
@@ -84,21 +86,38 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstadd(t_list **alst, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void	ft_print_list(t_list *list);
 
 size_t	ft_word_count(const char *s, char c);
 void	ft_print_array(char **arr);
 int		ft_isspace(const char c);
-int		ft_digit_counter(int n, int base);
+int		ft_digit_counter(unsigned long n, int base);
 void	ft_lstadd_back(t_list **alst, t_list *new);
 void	ft_lcase(char *s);
-void	ft_print_list(t_list *list);
 char	*ft_strndup(const char *str, size_t n);
 size_t	find_eofl(char *str);
 void	ft_realloc(char **s1, const char *s2);
-int		ft_get_next_line(const int fd, char **line);
+int		get_next_line(const int fd, char **line);
 
 char	**ft_arrnew(size_t str_count, size_t str_len);
 void	ft_free_2d_array(char **array);
 
 char	*ft_strrev(char *str);
+char	*ft_strtoupper(char *string);
+int		ft_isodd(int number);
+int		ft_pow(int base, int exponent);
+char	*ft_itoa_base(long dec, int base);
+char	*ft_unsigned_itoa_base(unsigned long dec, int base);
+
+void	ft_puterror(char *error_msg);
+long	ft_atol(const char *str);
+int		ft_isnumber(char *string);
+int		ft_nbr_in_array(int number, int *array, int array_size);
+int		ft_count_pointers(char **array);
+
+int		ft_printf(const char *format, ...);
+
+void	sort_int_tab(int *tab, int length);
+void	ft_print_tab(int *tab, size_t tab_size);
+
 #endif

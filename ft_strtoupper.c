@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_digit_counter.c                                 :+:      :+:    :+:   */
+/*   ft_strtoupper.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.Hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/03 13:27:38 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/12/03 13:31:35 by hmaronen         ###   ########.fr       */
+/*   Created: 2022/06/20 16:34:31 by hmaronen          #+#    #+#             */
+/*   Updated: 2022/06/20 16:34:34 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_digit_counter(unsigned long n, int base)
+char	*ft_strtoupper(char *string)
 {
-	unsigned long	temp;
-	int				i;
+	char	*result;
+	int		i;
 
 	i = 0;
-	temp = n;
-	while (temp != 0 && i++ != -1)
-		temp = temp / base;
-	return (i);
+	result = ft_strnew(ft_strlen(string));
+	while (string[i])
+	{
+		if (string[i] >= 97 && string[i] <= 122)
+			result[i] = (string[i] - 32);
+		else
+			result[i] = string[i];
+		i++;
+	}
+	ft_strdel(&string);
+	return (result);
 }

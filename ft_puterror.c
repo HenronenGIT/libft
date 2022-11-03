@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_digit_counter.c                                 :+:      :+:    :+:   */
+/*   ft_puterror.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.Hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/03 13:27:38 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/12/03 13:31:35 by hmaronen         ###   ########.fr       */
+/*   Created: 2022/07/15 11:33:51 by hmaronen          #+#    #+#             */
+/*   Updated: 2022/07/15 11:33:53 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_digit_counter(unsigned long n, int base)
+void	ft_puterror(char *error_msg)
 {
-	unsigned long	temp;
-	int				i;
-
-	i = 0;
-	temp = n;
-	while (temp != 0 && i++ != -1)
-		temp = temp / base;
-	return (i);
+	if (error_msg == NULL)
+		return ;
+	while (*error_msg)
+	{
+		write(2, &(*error_msg), 1);
+		error_msg++;
+	}
 }

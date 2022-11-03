@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_digit_counter.c                                 :+:      :+:    :+:   */
+/*   ft_nbr_in_array.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.Hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/03 13:27:38 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/12/03 13:31:35 by hmaronen         ###   ########.fr       */
+/*   Created: 2022/07/15 16:05:10 by hmaronen          #+#    #+#             */
+/*   Updated: 2022/07/15 16:05:11 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_digit_counter(unsigned long n, int base)
+int	ft_nbr_in_array(int number, int *array, int array_size)
 {
-	unsigned long	temp;
-	int				i;
+	int	i;
 
 	i = 0;
-	temp = n;
-	while (temp != 0 && i++ != -1)
-		temp = temp / base;
-	return (i);
+	if (array == NULL)
+		return (0);
+	while (i < array_size)
+	{
+		if (number == array[i])
+			return (1);
+		i += 1;
+	}
+	return (0);
 }

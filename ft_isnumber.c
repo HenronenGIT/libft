@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_digit_counter.c                                 :+:      :+:    :+:   */
+/*   ft_isnumber.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.Hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/03 13:27:38 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/12/03 13:31:35 by hmaronen         ###   ########.fr       */
+/*   Created: 2022/07/15 15:12:30 by hmaronen          #+#    #+#             */
+/*   Updated: 2022/07/15 15:12:33 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_digit_counter(unsigned long n, int base)
+int	ft_isnumber(char *string)
 {
-	unsigned long	temp;
-	int				i;
-
-	i = 0;
-	temp = n;
-	while (temp != 0 && i++ != -1)
-		temp = temp / base;
-	return (i);
+	if (string == NULL || *string == '\0')
+		return (0);
+	if (*string == '-' && ft_isdigit(string[1]))
+		string++;
+	while (*string)
+	{
+		if (ft_isdigit(*string))
+			string++;
+		else
+			return (0);
+	}
+	return (1);
 }

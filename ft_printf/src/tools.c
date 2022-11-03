@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/18 10:53:37 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/11/25 10:40:08 by hmaronen         ###   ########.fr       */
+/*   Created: 2022/05/11 14:26:28 by hmaronen          #+#    #+#             */
+/*   Updated: 2022/05/11 14:26:39 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+void	put_ptr(uintptr_t addr)
 {
-	char			*new_str;
-	unsigned int	size;
-	unsigned int	i;
-
-	i = 0;
-	size = (unsigned int)len;
-	if (!s)
-		return (NULL);
-	new_str = ft_strnew(len);
-	if (new_str == NULL)
-		return (NULL);
-	while (i != size && s[i])
+	if (addr >= 16)
 	{
-		new_str[i] = s[start];
-		start++;
-		i++;
+		put_ptr(addr / 16);
+		put_ptr(addr % 16);
 	}
-	return (new_str);
+	else
+	{
+		if (addr < 10)
+			ft_putchar(addr + 48);
+		else
+			ft_putchar(addr + 87);
+	}
+}
+
+int	put_padding(int width, char ch)
+{
+	int	i;
+
+	i = -1;
+	while (++i < width)
+		ft_putchar(ch);
+	return (i);
 }

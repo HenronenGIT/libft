@@ -21,6 +21,6 @@
 
 # include "libft.h"
 
-int	ft_get_next_line(const int fd, char **line);
+int	get_next_line(const int fd, char **line);
 
 #endif

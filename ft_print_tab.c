@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_digit_counter.c                                 :+:      :+:    :+:   */
+/*   ft_print_tab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmaronen <hmaronen@student.Hive.fi>        +#+  +:+       +#+        */
+/*   By: hmaronen <hmaronen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/03 13:27:38 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/12/03 13:31:35 by hmaronen         ###   ########.fr       */
+/*   Created: 2022/08/09 19:25:39 by hmaronen          #+#    #+#             */
+/*   Updated: 2022/08/09 19:25:40 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_digit_counter(unsigned long n, int base)
+void	ft_print_tab(int *tab, size_t tab_size)
 {
-	unsigned long	temp;
-	int				i;
+	size_t	i;
 
 	i = 0;
-	temp = n;
-	while (temp != 0 && i++ != -1)
-		temp = temp / base;
-	return (i);
+	while (i < tab_size)
+	{
+		ft_putnbr(tab[i]);
+		ft_putchar('\n');
+		i += 1;
+	}
+	return ;
 }

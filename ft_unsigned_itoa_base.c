@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_digit_counter.c                                 :+:      :+:    :+:   */
+/*   ft_unsigned_itoa_base.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaronen <hmaronen@student.Hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/03 13:27:38 by hmaronen          #+#    #+#             */
-/*   Updated: 2021/12/03 13:31:35 by hmaronen         ###   ########.fr       */
+/*   Created: 2022/07/06 22:29:12 by hmaronen          #+#    #+#             */
+/*   Updated: 2022/07/06 22:29:13 by hmaronen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_digit_counter(unsigned long n, int base)
+char	*ft_unsigned_itoa_base(unsigned long dec, int base)
 {
-	unsigned long	temp;
-	int				i;
+	char	*str;
+	int		remain;
+	int		i;
+	char	*temp;
 
+	if (dec == 0)
+		return (ft_strdup("0"));
+	str = ft_strnew(ft_digit_counter(dec, base));
 	i = 0;
-	temp = n;
-	while (temp != 0 && i++ != -1)
-		temp = temp / base;
-	return (i);
+	remain = 0;
+	while (dec != 0)
+	{
+		remain = dec % base;
+		if (remain < 10)
+			str[i] = remain + 48;
+		else
+			str[i] = remain + 87;
+		dec = dec / base;
+		i++;
+	}
+	temp = ft_strrev(str);
+	free(str);
+	return (temp);
 }
