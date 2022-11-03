@@ -10,6 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
+CYELLOW=\033[0;33m
+CEND=\033[0m
+CGREEN=\033[0;32m
+
 NAME = libftprintf.a
 
 CC = gcc -g
@@ -48,16 +52,19 @@ RM = /bin/rm -f
 all: $(NAME)
 
 $(NAME): $(SRC)
-	$(info Creating object files)
+	@echo "$(CYELLOW)Compiling $(NAME)$(CEND)"
 	@$(CC) $(FLAGS) $(HEADERS) -c $(SRC)
+	@echo "$(CGREEN)OK$(CEND)"
 
 clean:
-	$(info Cleaning object files)
+	@echo "$(CYELLOW)Deleting ft_printf .o files$(CEND)"
 	@$(RM) $(OBJ)
+	@echo "$(CGREEN)OK$(CEND)"
 
 fclean: clean
-	$(info Cleaning ft_printf library)
+	@echo "$(CYELLOW)Deleting ft_printf library$(CEND)"
 	@/bin/rm -f $(NAME)
+	CEND
 
 re: fclean all
 

@@ -122,7 +122,7 @@ OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(OBJ_DIR)
 	@@make -C ./ft_printf
 	@echo "$(CYELLOW)Compiling $(NAME)$(CEND)"
 	@@ar rc -s $(NAME) $(OBJ) $(PRINTF_OBJ)
@@ -134,13 +134,15 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@@/bin/rm -f $(OBJ)
-	@rm -f $(OBJ)
-	@rm -d $(OBJ_DIR)
+	@echo "$(CYELLOW)Deleting libft .o files$(CEND)"
+	@rm -rfd $(OBJ_DIR)
+	@echo "$(CGREEN)OK$(CEND)"
 	@@make -C ./ft_printf/ clean
 
 fclean: clean
+	@echo "$(CYELLOW)Deleting libft library$(CEND)"
 	@@/bin/rm -f $(NAME)
+	@echo "$(CGREEN)OK$(CEND)"
 
 re: fclean all
 
