@@ -11,7 +11,7 @@ Have you ever wanted to create plenty of libc functions from scratch - I bet you
 
 ## PDF
 
-<a href="./README/libft.en.pdf">Libft PDF</a>
+<a href="./README/pdf/libft.en.pdf">Libft PDF</a>
 
 ## ToDo
 - lstmap.c function does work correctly
