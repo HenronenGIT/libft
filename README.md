@@ -13,6 +13,9 @@ Have you ever wanted to create plenty of libc functions from scratch - I bet you
 
 <a href="./README/libft.en.pdf">Libft PDF</a>
 
+## ToDo
+- lstmap.c function does work correctly
+
 ### Keywords
 - Library
 - libc functions
